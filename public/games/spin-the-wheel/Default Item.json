@@ -1,0 +1,74 @@
+{
+    "c2array": true,
+    "size": [
+        8,
+        2,
+        1
+    ],
+    "data": [
+        [
+            [
+                "Discount Voucher 10%"
+            ],
+            [
+                4
+            ]
+        ],
+        [
+            [
+                "Sticker"
+            ],
+            [
+                9
+            ]
+        ],
+        [
+            [
+                "Discount Voucher 20%"
+            ],
+            [
+                4
+            ]
+        ],
+        [
+            [
+                "Cat Food"
+            ],
+            [
+                4
+            ]
+        ],
+        [
+            [
+                "Keychain"
+            ],
+            [
+                7
+            ]
+        ],
+        [
+            [
+                "Special Prize"
+            ],
+            [
+                1
+            ]
+        ],
+        [
+            [
+                "Merchandise Bag"
+            ],
+            [
+                2
+            ]
+        ],
+        [
+            [
+                "Treatment Coupon"
+            ],
+            [
+                2
+            ]
+        ]
+    ]
+}
