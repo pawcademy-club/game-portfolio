@@ -150,6 +150,31 @@
       .game-grid { grid-template-columns: 1fr; }
       .hero { padding: 60px 7%; }
     }
+
+    .game-card .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      flex: 1;
+      min-width: 0;
+      text-align: center;
+      white-space: nowrap;
+    }
+    
+    .game-card {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .game-card .button {
+      margin-top: 0;
+    }
+    
+    .game-card .button + .button {
+      margin-left: 10px;
+    }
+    
   </style>
 </head>
 
