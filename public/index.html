@@ -50,7 +50,7 @@
     }
 
     .tag {
-      display: inline-block;
+      dis: inline-block;
       background: white;
       padding: 9px 16px;
       border-radius: 99px;
@@ -72,7 +72,7 @@
     }
 
     .button {
-      display: inline-block;
+      dis: inline-block;
       background: var(--purple);
       color: white;
       text-decoration: none;
@@ -86,7 +86,7 @@
     .games h2 { font-size: 34px; }
 
     .game-grid {
-      display: grid;
+      dis: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
     }
@@ -104,7 +104,7 @@
       aspect-ratio: 16 / 10;
       border-radius: 16px;
       background: #ffe0e0;
-      display: grid;
+      dis: grid;
       place-items: center;
       overflow: hidden;
       font-size: 60px;
@@ -182,7 +182,7 @@
       A colorful little corner of the internet filled with
       games, creativity, and fun adventures.
     </p>
-    <a class="button" href="#games">Discover My Games ↓</a>
+    <a class="button" href="#games">Discover My Games</a>
   </header>
 
   <main class="games" id="games">
@@ -266,7 +266,7 @@
             game.detailsUrl || (game.gameUrl
               ? game.gameUrl.replace(/\/$/, "") + "/details.html"
               : "#");
-          detailsLink.textContent = "View Details →";
+          detailsLink.textContent = "View Details";
           actions.append(detailsLink);
           
           // Link to play the game directly
@@ -274,7 +274,7 @@
             const link = document.createElement("a");
             link.className = "button";
             link.href = game.gameUrl;
-            link.textContent = "Play Game →";
+            link.textContent = "Play Game";
             actions.append(link);
           }
           card.append(actions);
