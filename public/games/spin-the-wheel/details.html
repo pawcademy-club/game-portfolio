@@ -111,30 +111,57 @@
       margin-top: 28px;
     }
 
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 15px;
-      padding: 14px 24px;
-      font-weight: 800;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  padding: 14px 24px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
 
-    .button:hover {
-      transform: translateY(-3px);
-    }
+.button:hover {
+  transform: translateY(-3px);
+}
 
-    .button-primary {
-      background: var(--purple);
-      color: white;
-      box-shadow: 0 7px 0 var(--purple-dark);
-    }
+.button:active {
+  transform: translateY(2px);
+}
 
-    .button-secondary {
-      background: white;
-      border: 2px solid #eee6d8;
-    }
+.button:focus-visible {
+  outline: 3px solid var(--purple);
+  outline-offset: 4px;
+}
+
+.button-primary {
+  background: var(--purple);
+  color: white;
+  box-shadow: 0 7px 0 var(--purple-dark);
+}
+
+.button-primary:hover {
+  box-shadow: 0 10px 0 var(--purple-dark);
+  filter: brightness(1.08);
+}
+
+.button-primary:active {
+  box-shadow: 0 3px 0 var(--purple-dark);
+}
+
+.button-secondary {
+  background: white;
+  border: 2px solid #eee6d8;
+}
+
+.button-secondary:hover {
+  box-shadow: 0 8px 20px rgba(76, 53, 114, 0.12);
+}
 
     .cover-card {
       background: var(--yellow);
