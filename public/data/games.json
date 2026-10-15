@@ -1,0 +1,42 @@
+
+[
+  {
+    "id": "star-runner",
+    "title": "Star Runner",
+    "genre": "Platformer",
+    "description": "A colorful space adventure.",
+    "cover": "/assets/covers/star-runner.webp",
+    "screenshots": [],
+    "video": "",
+    "featured": true,
+    "published": true,
+    "gameUrl": "/games/star-runner/",
+    "controls": "Arrow keys or touch"
+  },
+  {
+    "id": "cozy-island",
+    "title": "Cozy Island",
+    "genre": "Adventure",
+    "description": "Explore a peaceful island full of surprises.",
+    "cover": "/assets/covers/cozy-island.webp",
+    "screenshots": [],
+    "video": "",
+    "featured": true,
+    "published": true,
+    "gameUrl": "/games/cozy-island/",
+    "controls": "Keyboard or touch"
+  },
+  {
+    "id": "puzzle-pop",
+    "title": "Puzzle Pop",
+    "genre": "Puzzle",
+    "description": "A playful puzzle game for curious minds.",
+    "cover": "/assets/covers/puzzle-pop.webp",
+    "screenshots": [],
+    "video": "",
+    "featured": false,
+    "published": true,
+    "gameUrl": "/games/puzzle-pop/",
+    "controls": "Mouse or touch"
+  }
+]
