@@ -292,6 +292,82 @@
         flex-direction: column;
       }
     }
+    
+    .gallery-grid img {
+      cursor: zoom-in;
+    }
+
+    .image-lightbox[hidden] {
+      display: none;
+    }
+
+    .image-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      padding: 60px 20px 24px;
+      background: rgba(30, 23, 48, 0.92);
+      backdrop-filter: blur(8px);
+    }
+
+    .image-lightbox img {
+      max-width: min(100%, 1100px);
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px #0005;
+    }
+
+    .image-lightbox p {
+      color: white;
+      text-align: center;
+      margin: 0;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 16px;
+      right: 22px;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: white;
+      color: #29233d;
+      font-size: 32px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .gallery-grid img {
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .gallery-grid img:hover {
+        transform: scale(1.035);
+        box-shadow: 0 12px 28px #4c35722b;
+      }
+
+      .image-lightbox:not([hidden]) img {
+        animation: imageAppear 0.2s ease-out;
+      }
+
+      @keyframes imageAppear {
+        from { transform: scale(0.96); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+      }
+    }
+
   </style>
 </head>
 
@@ -403,10 +479,70 @@
       © <span id="year"></span> Pawcademy Games · Made for fun 💜
     </div>
   </footer>
+  
+<script>
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-  <script>
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+  const lightbox = document.getElementById("imageLightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxCaption = document.getElementById("lightboxCaption");
+  const closeButton = document.getElementById("lightboxClose");
+  let previousFocus = null;
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.classList.remove("lightbox-open");
+    if (previousFocus) previousFocus.focus();
+  }
+
+  document.querySelectorAll(".gallery-grid img").forEach((img) => {
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
+    img.setAttribute("aria-label", "View larger image: " + img.alt);
+
+    function openLightbox() {
+      previousFocus = img;
+      lightboxImage.src = img.src;
+      lightboxImage.alt = img.alt;
+      lightboxCaption.textContent = img.alt;
+      lightbox.hidden = false;
+      document.body.classList.add("lightbox-open");
+      closeButton.focus();
+    }
+
+    img.addEventListener("click", openLightbox);
+    img.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox();
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox.hidden && event.key === "Escape") {
+      closeLightbox();
+    }
+  });
+</script>
+
+  <div class="image-lightbox" id="imageLightbox"
+       role="dialog" aria-modal="true"
+       aria-label="Screenshot preview" hidden>
+    <button class="lightbox-close" id="lightboxClose"
+            type="button" aria-label="Close image preview">
+      &times;
+    </button>
+    <img id="lightboxImage" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
+
 </body>
 </html>
