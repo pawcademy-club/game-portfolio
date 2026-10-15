@@ -238,8 +238,20 @@
           description.textContent =
             game.description || "Discover this game.";
 
-          card.append(art, genre, title, description);
 
+          card.append(art, genre, title, description);
+          
+          // Link to the game details page
+          const detailsLink = document.createElement("a");
+          detailsLink.className = "button";
+          detailsLink.href =
+            game.detailsUrl || (game.gameUrl
+              ? game.gameUrl.replace(/\/$/, "") + "/details.html"
+              : "#");
+          detailsLink.textContent = "View Details →";
+          card.append(detailsLink);
+          
+          // Link to play the game directly
           if (game.gameUrl) {
             const link = document.createElement("a");
             link.className = "button";
@@ -247,6 +259,8 @@
             link.textContent = "Play Game ↗";
             card.append(link);
           }
+          
+          grid.append(card);
 
           grid.append(card);
         });
