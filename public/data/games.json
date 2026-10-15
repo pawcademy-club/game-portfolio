@@ -1,17 +1,18 @@
 
 [
+  
   {
-    "id": "star-runner",
-    "title": "Star Runner",
-    "genre": "Platformer",
-    "description": "A colorful space adventure.",
-    "cover": "/assets/covers/star-runner.webp",
+    "id": "spin-the-wheel",
+    "title": "Spin the Wheel",
+    "genre": "Casual",
+    "description": "Spin the wheel and discover the fun!",
+    "cover": "/assets/covers/spin-the-wheel.webp",
     "screenshots": [],
     "video": "",
     "featured": true,
     "published": true,
-    "gameUrl": "/games/star-runner/",
-    "controls": "Arrow keys or touch"
+    "gameUrl": "/games/spin-the-wheel/",
+    "controls": "Mouse or touch"
   },
   {
     "id": "cozy-island",
