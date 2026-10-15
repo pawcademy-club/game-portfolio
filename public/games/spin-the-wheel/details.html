@@ -479,6 +479,17 @@
       © <span id="year"></span> Pawcademy Games · Made for fun 💜
     </div>
   </footer>
+
+  <div class="image-lightbox" id="imageLightbox"
+       role="dialog" aria-modal="true"
+       aria-label="Screenshot preview" hidden>
+    <button class="lightbox-close" id="lightboxClose"
+            type="button" aria-label="Close image preview">
+      &times;
+    </button>
+    <img id="lightboxImage" src="" alt="">
+    <p id="lightboxCaption"></p>
+  </div>
   
 <script>
   document.getElementById("year").textContent =
@@ -532,17 +543,6 @@
     }
   });
 </script>
-
-  <div class="image-lightbox" id="imageLightbox"
-       role="dialog" aria-modal="true"
-       aria-label="Screenshot preview" hidden>
-    <button class="lightbox-close" id="lightboxClose"
-            type="button" aria-label="Close image preview">
-      &times;
-    </button>
-    <img id="lightboxImage" src="" alt="">
-    <p id="lightboxCaption"></p>
-  </div>
 
 </body>
 </html>
