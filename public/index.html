@@ -151,29 +151,20 @@
       .hero { padding: 60px 7%; }
     }
 
-    .game-card .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      box-sizing: border-box;
-      flex: 1;
-      min-width: 0;
-      text-align: center;
-      white-space: nowrap;
-    }
-    
-    .game-card {
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .game-card .button {
-      margin-top: 0;
-    }
-    
-    .game-card .button + .button {
-      margin-left: 10px;
-    }
+.game-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.game-card-actions .button {
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+}
+
     
   </style>
 </head>
@@ -265,7 +256,9 @@
 
 
           card.append(art, genre, title, description);
-          
+
+          const actions = document.createElement("div");
+          actions.className = "game-card-actions";
           // Link to the game details page
           const detailsLink = document.createElement("a");
           detailsLink.className = "button";
@@ -274,7 +267,7 @@
               ? game.gameUrl.replace(/\/$/, "") + "/details.html"
               : "#");
           detailsLink.textContent = "View Details →";
-          card.append(detailsLink);
+          actions.append(detailsLink);
           
           // Link to play the game directly
           if (game.gameUrl) {
@@ -282,8 +275,9 @@
             link.className = "button";
             link.href = game.gameUrl;
             link.textContent = "Play Game ↗";
-            card.append(link);
+            actions.append(link);
           }
+          card.append(actions);
           
           grid.append(card);
 
