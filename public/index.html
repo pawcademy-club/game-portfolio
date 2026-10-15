@@ -3,9 +3,10 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>My Game Studio</title>
-  <meta name="description" content="Discover colorful games made with Construct 3.">
+  <meta name="description" content="Discover games made with Construct 3.">
+
   <style>
     :root {
       --coral: #ff6b6b;
@@ -35,7 +36,12 @@
     }
 
     .logo { font-weight: 900; font-size: 20px; }
-    nav a { color: var(--ink); text-decoration: none; font-weight: bold; }
+
+    nav a {
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: bold;
+    }
 
     .hero {
       padding: 85px 7%;
@@ -56,7 +62,6 @@
       font-size: clamp(40px, 7vw, 76px);
       line-height: 1.05;
       margin: 22px auto;
-      max-width: 800px;
     }
 
     .hero p {
@@ -71,12 +76,12 @@
       background: var(--purple);
       color: white;
       text-decoration: none;
-      padding: 15px 24px;
+      padding: 14px 22px;
       border-radius: 14px;
       font-weight: bold;
     }
 
-    .games { padding: 65px 7%; }
+    .games { padding: 55px 7%; }
 
     .games h2 { font-size: 34px; }
 
@@ -89,24 +94,47 @@
     .game-card {
       background: white;
       border-radius: 22px;
-      padding: 20px;
+      padding: 16px;
       border: 2px solid #f0eadf;
+      overflow: hidden;
     }
 
     .game-art {
-      min-height: 160px;
+      width: 100%;
+      aspect-ratio: 16 / 10;
       border-radius: 16px;
+      background: #ffe0e0;
       display: grid;
       place-items: center;
+      overflow: hidden;
       font-size: 60px;
     }
 
-    .pink { background: #ffe0e0; }
-    .green { background: #d8f9ec; }
-    .blue { background: #e1e4ff; }
+    .game-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
     .game-card h3 { margin-bottom: 8px; }
-    .game-card p { line-height: 1.6; color: #666; }
+
+    .game-card p {
+      line-height: 1.6;
+      color: #666;
+    }
+
+    .genre {
+      color: #5b5fef;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .game-card .button { margin-top: 8px; }
+
+    .message {
+      padding: 20px 0;
+      line-height: 1.6;
+    }
 
     footer {
       padding: 28px 7%;
@@ -114,12 +142,17 @@
       background: white;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 750px) {
+      .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 500px) {
       .game-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 60px; padding-bottom: 60px; }
+      .hero { padding: 60px 7%; }
     }
   </style>
 </head>
+
 <body>
   <nav>
     <div class="logo">🎮 My Game Studio</div>
@@ -129,37 +162,113 @@
   <header class="hero">
     <span class="tag">✨ MADE WITH CONSTRUCT 3</span>
     <h1>Small games.<br>Big adventures.</h1>
-    <p>A colorful little corner of the internet filled with games, creativity, and fun adventures.</p>
+    <p>
+      A colorful little corner of the internet filled with
+      games, creativity, and fun adventures.
+    </p>
     <a class="button" href="#games">Discover My Games ↓</a>
   </header>
 
   <main class="games" id="games">
-    <h2>🎲 Featured Games</h2>
-    <p>Meet the games from my little studio.</p>
+    <h2>🎲 My Games</h2>
+    <p>Explore the games from my little studio.</p>
 
-    <div class="game-grid">
-      <article class="game-card">
-        <div class="game-art pink">🚀</div>
-        <h3>Star Runner</h3>
-        <p>Jump into a colorful space adventure.</p>
-      </article>
-
-      <article class="game-card">
-        <div class="game-art green">🌴</div>
-        <h3>Cozy Island</h3>
-        <p>Explore a peaceful island full of surprises.</p>
-      </article>
-
-      <article class="game-card">
-        <div class="game-art blue">🧩</div>
-        <h3>Puzzle Pop</h3>
-        <p>A playful puzzle game for curious minds.</p>
-      </article>
+    <div id="game-grid" class="game-grid">
+      <p class="message">Loading games...</p>
     </div>
+    <p id="status" class="message" aria-live="polite"></p>
   </main>
 
-  <footer>
-    Made with 💜 and Construct 3
-  </footer>
+  <footer>Made with 💜 and Construct 3</footer>
+
+  <script>
+    async function loadGames() {
+      const grid = document.getElementById("game-grid");
+      const status = document.getElementById("status");
+
+      try {
+        const response = await fetch("/data/games.json");
+
+        if (!response.ok) {
+          throw new Error("Could not load games.json");
+        }
+
+        const games = await response.json();
+        const publishedGames = games.filter(
+          game => game.published === true
+        );
+
+        grid.replaceChildren();
+
+        if (publishedGames.length === 0) {
+          status.textContent = "No games published yet.";
+          return;
+        }
+
+        publishedGames.forEach(game => {
+          const card = document.createElement("article");
+          card.className = "game-card";
+
+          const art = document.createElement("div");
+          art.className = "game-art";
+          art.textContent = "🎮";
+
+          if (game.cover) {
+            const img = document.createElement("img");
+            img.src = game.cover;
+            img.alt = game.title || "Game cover";
+            img.loading = "lazy";
+
+            img.onerror = () => {
+              img.remove();
+              art.textContent = "🎮";
+            };
+
+            art.replaceChildren(img);
+          }
+
+          const genre = document.createElement("div");
+          genre.className = "genre";
+          genre.textContent = game.genre || "Game";
+
+          const title = document.createElement("h3");
+          title.textContent = game.title || "Untitled Game";
+
+          const description = document.createElement("p");
+          description.textContent =
+            game.description || "Discover this game.";
+
+          card.append(art, genre, title, description);
+
+          if (game.gameUrl) {
+            const link = document.createElement("a");
+            link.className = "button";
+            link.href = game.gameUrl;
+            link.textContent = "Play Game ↗";
+            card.append(link);
+          }
+
+          grid.append(card);
+        });
+
+        status.textContent =
+          publishedGames.length + " games in the collection.";
+
+      } catch (error) {
+        grid.replaceChildren();
+
+        const message = document.createElement("p");
+        message.className = "message";
+        message.textContent =
+          "Games could not be loaded. Please check data/games.json.";
+
+        grid.append(message);
+        status.textContent = "";
+        console.error(error);
+      }
+    }
+
+    loadGames();
+  </script>
 </body>
 </html>
