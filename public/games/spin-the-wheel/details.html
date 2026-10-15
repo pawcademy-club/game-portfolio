@@ -395,6 +395,35 @@
       }
     }
 
+/* Smooth entrance animation */
+@media (prefers-reduced-motion: no-preference) {
+  .hero,
+  .gallery-grid,
+  .play-banner {
+    animation: fadeUp 0.7s ease-out both;
+  }
+
+  .gallery-grid {
+    animation-delay: 0.15s;
+  }
+
+  .play-banner {
+    animation-delay: 0.25s;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
   </style>
 </head>
 
