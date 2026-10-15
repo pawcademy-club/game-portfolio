@@ -424,6 +424,69 @@
   }
 }
 
+/* Gameplay video section */
+.game-video {
+  margin: 56px 0;
+}
+
+.video-heading {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.video-label {
+  display: inline-block;
+  color: var(--purple);
+  background: #f0e8ff;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.video-heading h2 {
+  margin: 0 0 10px;
+  font-size: clamp(25px, 4vw, 36px);
+  color: var(--purple-dark);
+}
+
+.video-heading p {
+  margin: 0;
+  color: #746c7f;
+  line-height: 1.6;
+}
+
+.video-frame {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #211a32;
+  border: 5px solid white;
+  box-shadow: 0 18px 45px rgba(76, 53, 114, 0.16);
+}
+
+.video-frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #211a32;
+}
+
+@media (max-width: 600px) {
+  .game-video {
+    margin: 38px 0;
+  }
+
+  .video-frame {
+    border-width: 3px;
+    border-radius: 14px;
+  }
+}
   </style>
 </head>
 
@@ -514,6 +577,30 @@
               alt="Spin the Wheel gameplay screenshot 3"
               loading="lazy"
             >
+          </div>
+        </section>
+
+     
+        <section class="game-video">
+          <div class="video-heading">
+            <span class="video-label">🎬 GAMEPLAY</span>
+            <h2>See the Game in Action</h2>
+            <p>Take a closer look at the fun waiting for you!</p>
+          </div>
+        
+          <div class="video-frame">
+            <video
+              controls
+              preload="metadata"
+              playsinline
+              poster="/assets/covers/spin-the-wheel.webp"
+            >
+              <source
+                src="/assets/videos/spin-the-wheel-gameplay.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support HTML5 video.
+            </video>
           </div>
         </section>
 
