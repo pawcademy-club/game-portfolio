@@ -8,7 +8,11 @@
     "genre": "Casual",
     "description": "Spin the wheel and discover the fun!",
     "cover": "/assets/covers/spin-the-wheel.webp",
-    "screenshots": [],
+    "screenshots": [
+      "/assets/screenshots/spin-the-wheel-1.webp",
+      "/assets/screenshots/spin-the-wheel-2.webp",
+      "/assets/screenshots/spin-the-wheel-3.webp"
+    ],
     "video": "/assets/videos/spin-the-wheel-gameplay.mp4",
     "developer": "Pawcademy",
     "features": [
