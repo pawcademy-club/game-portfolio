@@ -737,12 +737,15 @@
       const section = createElement("section", "panel");
       section.append(createElement("h2", "", "You May Also Like"));
 
+      
       const related = games
         .filter(game =>
           game.published === true &&
           game.id !== currentGame.id
         )
+        .sort(() => Math.random() - 0.5)
         .slice(0, 4);
+
 
       if (!related.length) {
         section.append(createElement(
