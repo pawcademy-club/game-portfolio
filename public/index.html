@@ -274,24 +274,26 @@
 
     /* Pawcademy Game Filters */
     .game-filters {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      align-items: end;
-      gap: 22px 20px;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: flex-end;
+      gap: 12px;
       margin: 28px 0 32px;
-      padding: 24px;
+      padding: 18px;
       background: linear-gradient(135deg, #fff9ed, #f5f0ff);
       border: 1px solid #eee6ff;
       border-radius: 20px;
       box-shadow: 0 8px 24px rgba(76, 53, 114, 0.08);
+      overflow-x: auto;
     }
     
     .filter-group {
       display: flex;
       flex-direction: column;
       gap: 8px;
+      flex: 0 1 145px;
       min-width: 0;
-      width: 100%;
+      max-width: 180px;
     }
     
     .filter-group label {
@@ -392,6 +394,27 @@
       }
     }
     
+    /* Compact toolbar widths */
+    .filter-group:has(select) {
+      flex: 0 1 135px;
+    }
+    
+    .platform-filter-group {
+      flex: 0 0 250px;
+    }
+    
+    .game-filters .filter-group:has(input[type="search"]) {
+      flex: 1 1 180px;
+      max-width: 240px;
+    }
+    
+    .game-filters .reset-filters {
+      flex: 0 0 auto;
+      width: auto;
+      white-space: nowrap;
+      padding: 12px 14px;
+    }
+    
     /* Pawcademy Game Search */
     .filter-group input[type="search"] {
       width: 100%;
@@ -488,11 +511,11 @@
     
     /* Platform filter buttons */
     .platform-filter-group {
-      min-width: 0;
+      flex: 0 0 auto;
+      width: auto;
       max-width: none;
-      width: 100%;
     }
-    
+        
     .platform-filter {
       display: flex;
       align-items: center;
