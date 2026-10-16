@@ -1029,13 +1029,22 @@ function filterGames() {
     button.type = "button";
     button.textContent = "Clear Search & Filters";
   
+    
     button.addEventListener("click", () => {
       projectFilter.value = "all";
       genreFilter.value = "all";
       gameSearch.value = "";
+    
+      platformButtons.forEach(platformButton => {
+        const isActive = platformButton.dataset.platform === "all";
+    
+        platformButton.classList.toggle("active", isActive);
+        platformButton.setAttribute("aria-pressed", String(isActive));
+      });
+    
       filterGames();
     });
-  
+
     emptyState.append(paw, title, message, button);
     grid.appendChild(emptyState);
   
