@@ -231,6 +231,43 @@
       }
     }
 
+    /* Reset Filters Button */
+    .reset-filters {
+      align-self: center;
+      padding: 12px 20px;
+      color: #5538bf;
+      background: #ffffff;
+      border: 1px solid #dfd2ff;
+      border-radius: 12px;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s ease,
+                  color 0.2s ease,
+                  border-color 0.2s ease,
+                  transform 0.2s ease;
+    }
+    
+    .reset-filters:hover {
+      color: #ffffff;
+      background: #7655e8;
+      border-color: #7655e8;
+      transform: translateY(-2px);
+    }
+    
+    .reset-filters:focus-visible {
+      outline: 3px solid rgba(118, 85, 232, 0.3);
+      outline-offset: 3px;
+    }
+    
+    @media (max-width: 600px) {
+      .reset-filters {
+        align-self: stretch;
+        width: 100%;
+      }
+    }
+
   </style>
 </head>
 
@@ -268,6 +305,11 @@
           <option value="all">All Genres</option>
         </select>
       </div>
+      
+      <button type="button" id="reset-filters" class="reset-filters">
+        Reset Filters ↺
+      </button>
+
     </div>
 
     <div id="game-grid" class="game-grid">
@@ -455,7 +497,16 @@
     
     projectFilter.addEventListener("change", filterGames);
     genreFilter.addEventListener("change", filterGames);
+
     
+    const resetFilters = document.getElementById("reset-filters");
+    
+    resetFilters.addEventListener("click", () => {
+      projectFilter.value = "all";
+      genreFilter.value = "all";
+      filterGames();
+    });
+
     loadGames();
 
   </script>
