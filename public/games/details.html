@@ -419,6 +419,14 @@
       border-radius: 20px;
       box-shadow: 0 8px 24px rgba(76, 53, 114, 0.08);
       cursor: zoom-in;
+
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      overflow: hidden;
+    }
+    
+    .gallery-grid img:hover {
+      transform: scale(1.035);
+      box-shadow: 0 14px 30px rgba(76, 53, 114, 0.18);
     }
     
     video {
