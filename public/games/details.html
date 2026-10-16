@@ -303,29 +303,55 @@
       justify-content: center;
       width: 46px;
       height: 46px;
-      border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .16);
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      background: transparent;
       color: white;
-      font-size: 26px;
+      font-size: 32px;
+      line-height: 1;
       cursor: pointer;
+      box-shadow: none;
+      transition: none;
+      appearance: none;
     }
-
+    
     .lightbox-close {
       top: 18px;
       right: 18px;
     }
-
+    
     .lightbox-prev {
       left: 18px;
       top: 50%;
       transform: translateY(-50%);
     }
-
+    
     .lightbox-next {
       right: 18px;
       top: 50%;
       transform: translateY(-50%);
+    }
+    
+    .lightbox-close:hover,
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      background: transparent;
+      color: white;
+      box-shadow: none;
+      transform: none;
+    }
+    
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+      transform: translateY(-50%);
+    }
+    
+    .lightbox-close:focus-visible,
+    .lightbox-prev:focus-visible,
+    .lightbox-next:focus-visible {
+      outline: 2px solid white;
+      outline-offset: 4px;
     }
 
     .lightbox-count {
