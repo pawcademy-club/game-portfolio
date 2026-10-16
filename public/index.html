@@ -1060,6 +1060,15 @@
                 ? [game.platform]
                 : []
           );
+          
+          card.dataset.controls = JSON.stringify(
+            Array.isArray(game.controls)
+              ? game.controls
+              : game.controls
+                ? game.controls.split(",").map(control => control.trim())
+                : []
+          );
+
           card.dataset.date = game.developmentDate || "";
 
           const art = document.createElement("div");
@@ -1331,7 +1340,14 @@ function filterGames() {
         platformButton.classList.toggle("active", isActive);
         platformButton.setAttribute("aria-pressed", String(isActive));
       });
-    
+      
+      controlButtons.forEach(controlButton => {
+        const isActive = controlButton.dataset.control === "all";
+      
+        controlButton.classList.toggle("active", isActive);
+        controlButton.setAttribute("aria-pressed", String(isActive));
+      });
+
       filterGames();
     });
 
@@ -1373,7 +1389,23 @@ function filterGames() {
         filterGames();
       });
     });
-
+    
+    const controlButtons = document.querySelectorAll(".control-btn");
+    
+    controlButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        controlButtons.forEach(btn => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-pressed", "false");
+        });
+    
+        button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
+    
+        filterGames();
+      });
+    });
+    
     resetFilters.addEventListener("click", () => {
       projectFilter.value = "all";
       genreFilter.value = "all";
@@ -1385,7 +1417,14 @@ function filterGames() {
         button.classList.toggle("active", isActive);
         button.setAttribute("aria-pressed", String(isActive));
       });
-    
+      
+      controlButtons.forEach(button => {
+        const isAll = button.dataset.control === "all";
+      
+        button.classList.toggle("active", isAll);
+        button.setAttribute("aria-pressed", isAll ? "true" : "false");
+      });
+
       filterGames();
     });
 
