@@ -321,12 +321,22 @@
 
     <div class="game-filters">
       <div class="filter-group">
+        <label for="sort-games">Sort Games</label>
+        <select id="sort-games">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="az">Alphabetical (A–Z)</option>
+          <option value="za">Alphabetical (Z–A)</option>
+        </select>
+      </div>
+    
+      <div class="filter-group">
         <label for="project-filter">Project Type</label>
         <select id="project-filter">
           <option value="all">All Project Types</option>
         </select>
       </div>
-    
+
       <div class="filter-group">
         <label for="genre-filter">Genre</label>
         <select id="genre-filter">
