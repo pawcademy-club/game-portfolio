@@ -171,7 +171,7 @@
 
 <body>
   <nav>
-    <div class="logo">🎮 My Game Studio</div>
+    <div class="logo">🎮 Pawcademy Games</div>
     <a href="#games">Explore Games ↗</a>
   </nav>
 
@@ -189,6 +189,22 @@
     <h2>🎲 My Games</h2>
     <p>Explore the games from my little studio.</p>
 
+    <div class="game-filters">
+      <div class="filter-group">
+        <label for="project-filter">Project Type</label>
+        <select id="project-filter">
+          <option value="all">All Project Types</option>
+        </select>
+      </div>
+    
+      <div class="filter-group">
+        <label for="genre-filter">Genre</label>
+        <select id="genre-filter">
+          <option value="all">All Genres</option>
+        </select>
+      </div>
+    </div>
+
     <div id="game-grid" class="game-grid">
       <p class="message">Loading games...</p>
     </div>
@@ -201,7 +217,8 @@
     async function loadGames() {
       const grid = document.getElementById("game-grid");
       const status = document.getElementById("status");
-
+      const projectFilter = document.getElementById("project-filter");
+      const genreFilter = document.getElementById("genre-filter");
       try {
         const response = await fetch("/data/games.json");
 
@@ -214,6 +231,43 @@
           game => game.published === true
         );
 
+        projectFilter.replaceChildren(
+          new Option("All Project Types", "all")
+        );
+        
+        genreFilter.replaceChildren(
+          new Option("All Genres", "all")
+        );
+        
+        const projectTypes = [
+          ...new Set(
+            publishedGames.map(game => game.projectType).filter(Boolean)
+          )
+        ];
+        
+        const genres = [
+          ...new Set(
+            publishedGames.map(game => game.genre).filter(Boolean)
+          )
+        ];
+        
+        projectTypes.forEach(type => {
+          const labels = {
+            internal: "Internal Project",
+            client: "Client Project",
+            prototype: "Prototype / Demo"
+          };
+        
+          projectFilter.add(
+            new Option(labels[type] || type, type)
+          );
+        });
+        
+        genres.forEach(genre => {
+          genreFilter.add(new Option(genre, genre));
+        });
+        
+
         grid.replaceChildren();
 
         if (publishedGames.length === 0) {
@@ -224,6 +278,8 @@
         publishedGames.forEach(game => {
           const card = document.createElement("article");
           card.className = "game-card";
+          card.dataset.projectType = game.projectType || "";
+          card.dataset.genre = game.genre || "";
 
           const art = document.createElement("div");
           art.className = "game-art";
@@ -284,8 +340,11 @@
           grid.append(card);
         });
 
-        status.textContent =
+        /*status.textContent =
           publishedGames.length + " games in the collection.";
+          */
+   
+        filterGames();
 
       } catch (error) {
         grid.replaceChildren();
@@ -300,6 +359,35 @@
         console.error(error);
       }
     }
+
+    function filterGames() {
+      const projectType = projectFilter.value;
+      const genre = genreFilter.value;
+    
+      const cards = document.querySelectorAll("#game-grid .game-card");
+    
+      cards.forEach(card => {
+        const matchesProject =
+          projectType === "all" ||
+          card.dataset.projectType === projectType;
+    
+        const matchesGenre =
+          genre === "all" ||
+          card.dataset.genre === genre;
+    
+        card.hidden = !(matchesProject && matchesGenre);
+      });
+    
+      const visibleCount = [...cards].filter(
+        card => !card.hidden
+      ).length;
+    
+      status.textContent =
+        visibleCount + " games in the collection.";
+    }
+
+    projectFilter.addEventListener("change", filterGames);
+    genreFilter.addEventListener("change", filterGames);
 
     loadGames();
   </script>
