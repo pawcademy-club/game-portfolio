@@ -464,6 +464,23 @@
     }
 
     
+    .project-information .metadata {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    
+    @media (max-width: 600px) {
+      .project-information .metadata {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    
+    @media (max-width: 380px) {
+      .project-information .metadata {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Project Information - Pawcademy */
     .project-information .metadata-item {
       background: linear-gradient(145deg, #ffffff, #faf7ff);
