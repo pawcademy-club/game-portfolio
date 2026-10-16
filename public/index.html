@@ -404,8 +404,32 @@
     }
     
     .game-filters .filter-group:has(input[type="search"]) {
-      flex: 1 1 180px;
-      max-width: 240px;
+      flex: 1 1 160px;
+      max-width: 220px;
+    }
+    
+    .game-filters .platform-filter-group {
+      flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+    }
+    
+    .game-filters .platform-filter {
+      flex-wrap: nowrap;
+      gap: 6px;
+    }
+    
+    .game-filters .platform-btn {
+      gap: 5px;
+      padding: 9px 10px;
+      font-size: 13px;
+    }
+    
+    .game-filters .platform-count {
+      min-width: 18px;
+      height: 18px;
+      padding: 0 4px;
+      font-size: 11px;
     }
     
     .game-filters .reset-filters {
@@ -680,7 +704,17 @@
           <option value="all">All Genres</option>
         </select>
       </div>
-      
+
+      <div class="filter-group search-group">
+        <label for="game-search">Search Games</label>
+        <input
+          type="search"
+          id="game-search"
+          placeholder="Search by game title..."
+          autocomplete="off"
+        />
+      </div>
+
       <div class="filter-group platform-filter-group">
         <label>Platform</label>
       
@@ -714,16 +748,6 @@
             <span class="platform-count" id="count-mobile">0</span>
           </button>
         </div>
-      </div>
-
-      <div class="filter-group search-group">
-        <label for="game-search">Search Games</label>
-        <input
-          type="search"
-          id="game-search"
-          placeholder="Search by game title..."
-          autocomplete="off"
-        />
       </div>
 
       <button type="button" id="reset-filters" class="reset-filters">
