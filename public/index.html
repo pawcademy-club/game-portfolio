@@ -267,6 +267,34 @@
         width: 100%;
       }
     }
+    
+    /* Pawcademy Game Search */
+    .filter-group input[type="search"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 13px 15px;
+      color: #29233d;
+      background-color: #ffffff;
+      border: 1px solid #dfd2ff;
+      border-radius: 12px;
+      font: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .filter-group input[type="search"]::placeholder {
+      color: #a19aae;
+    }
+    
+    .filter-group input[type="search"]:hover {
+      border-color: #7655e8;
+    }
+    
+    .filter-group input[type="search"]:focus {
+      border-color: #7655e8;
+      box-shadow: 0 0 0 3px rgba(118, 85, 232, 0.15);
+    }
 
   </style>
 </head>
@@ -306,6 +334,16 @@
         </select>
       </div>
       
+      <div class="filter-group search-group">
+        <label for="game-search">Search Games</label>
+        <input
+          type="search"
+          id="game-search"
+          placeholder="Search by game title..."
+          autocomplete="off"
+        />
+      </div>
+
       <button type="button" id="reset-filters" class="reset-filters">
         Reset Filters ↺
       </button>
@@ -468,6 +506,7 @@
       const projectType = projectFilter.value;
       const genre = genreFilter.value;
       const status = document.getElementById("status");
+      const searchTerm = gameSearch.value.trim().toLowerCase();
     
       const cards = document.querySelectorAll("#game-grid .game-card");
     
@@ -480,7 +519,16 @@
           genre === "all" ||
           card.dataset.genre === genre;
     
-        card.hidden = !(matchesProject && matchesGenre);
+        
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const matchesSearch = title.includes(searchTerm);
+        
+        card.hidden = !(
+          matchesProject &&
+          matchesGenre &&
+          matchesSearch
+        );
+
       });
     
       const visibleCount = [...cards].filter(
@@ -497,13 +545,16 @@
     
     projectFilter.addEventListener("change", filterGames);
     genreFilter.addEventListener("change", filterGames);
-
+    gameSearch.addEventListener("input", filterGames);
     
     const resetFilters = document.getElementById("reset-filters");
+    const gameSearch = document.getElementById("game-search");
+
     
     resetFilters.addEventListener("click", () => {
       projectFilter.value = "all";
       genreFilter.value = "all";
+      gameSearch.value = "";
       filterGames();
     });
 
