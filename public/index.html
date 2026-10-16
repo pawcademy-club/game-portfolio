@@ -217,8 +217,7 @@
     async function loadGames() {
       const grid = document.getElementById("game-grid");
       const status = document.getElementById("status");
-      const projectFilter = document.getElementById("project-filter");
-      const genreFilter = document.getElementById("genre-filter");
+      
       try {
         const response = await fetch("/data/games.json");
 
@@ -336,8 +335,6 @@
           card.append(actions);
           
           grid.append(card);
-
-          grid.append(card);
         });
 
         /*status.textContent =
@@ -363,6 +360,7 @@
     function filterGames() {
       const projectType = projectFilter.value;
       const genre = genreFilter.value;
+      const status = document.getElementById("status");
     
       const cards = document.querySelectorAll("#game-grid .game-card");
     
@@ -386,10 +384,15 @@
         visibleCount + " games in the collection.";
     }
 
+    
+    const projectFilter = document.getElementById("project-filter");
+    const genreFilter = document.getElementById("genre-filter");
+    
     projectFilter.addEventListener("change", filterGames);
     genreFilter.addEventListener("change", filterGames);
-
+    
     loadGames();
+
   </script>
 </body>
 </html>
