@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Game Studio</title>
+  <title>Pawcademy Games</title>
   <meta name="description" content="Discover games made with Construct 3.">
 
   <style>
@@ -30,12 +30,48 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      padding: 22px 7%;
-      background: white;
-    }
+      gap: 20px;
+      padding: 18px 6%;
+      background: linear-gradient(135deg, #fff9ed, #f3edff);
+      border-bottom: 1px solid #e8ddff;
 
-    .logo { font-weight: 900; font-size: 20px; }
+    }
+    
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    
+    .paw-logo {
+      display: block;
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      color: var(--purple);
+    }
+    
+    .logo strong {
+      color: var(--purple);
+      font-weight: 900;
+    }
+    
+    @media (max-width: 480px) {
+      .logo {
+        gap: 7px;
+        font-size: 17px;
+      }
+    
+      .paw-logo {
+        width: 30px;
+        height: 30px;
+      }
+    }
 
     nav a {
       color: var(--ink);
@@ -194,21 +230,7 @@
       font-weight: 700;
       letter-spacing: 0.5px;
     }
-    
-    /*.filter-group select {
-      width: 100%;
-      padding: 13px 40px 13px 15px;
-      color: #29233d;
-      background-color: #ffffff;
-      border: 1px solid #dfd2ff;
-      border-radius: 12px;
-      font: inherit;
-      font-size: 14px;
-      cursor: pointer;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }*/
-    
+        
     .filter-group select {
       width: 100%;
       box-sizing: border-box;
@@ -323,7 +345,36 @@
 
 <body>
   <nav>
-    <div class="logo">🎮 Pawcademy Games</div>
+    
+  <a class="logo" href="/" aria-label="Pawcademy Games home">
+    <svg
+      class="paw-logo"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      aria-hidden="true"
+    >
+      <ellipse cx="16" cy="23" rx="7" ry="9" fill="currentColor"
+        transform="rotate(-25 16 23)" />
+      <ellipse cx="29" cy="14" rx="7" ry="9" fill="currentColor"
+        transform="rotate(-8 29 14)" />
+      <ellipse cx="43" cy="17" rx="7" ry="9" fill="currentColor"
+        transform="rotate(15 43 17)" />
+      <ellipse cx="53" cy="29" rx="6" ry="8" fill="currentColor"
+        transform="rotate(30 53 29)" />
+      <path
+        d="M32 29
+           C25 29 21 36 17 41
+           C13 46 16 53 23 52
+           C27 51 29 49 32 49
+           C36 49 39 52 44 52
+           C51 52 53 46 48 41
+           C43 35 39 29 32 29Z"
+        fill="currentColor"
+      />
+    </svg>
+    <span><strong>Pawcademy</strong> Games</span>
+  </a>
+
     <a href="#games">Explore Games ↗</a>
   </nav>
 
