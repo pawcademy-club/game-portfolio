@@ -272,12 +272,11 @@
       margin: 0;
     }
 
+    
     /* Pawcademy Game Filters */
     .game-filters {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-end;
+      flex-direction: column;
       gap: 20px;
       margin: 28px 0 32px;
       padding: 24px;
@@ -286,53 +285,100 @@
       border-radius: 20px;
       box-shadow: 0 8px 24px rgba(76, 53, 114, 0.08);
     }
-
-    .filter-group {
+    
+    .filter-row {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1 1 200px;
-      min-width: 200px;
-      max-width: 340px;
-    }
-
-    .filter-group label {
-      color: #5538bf;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-        
-    .filter-group select {
+      align-items: flex-end;
+      gap: 16px;
       width: 100%;
-      box-sizing: border-box;
-      padding: 13px 44px 13px 15px;
-      color: #29233d;
-      background-color: #ffffff;
-      border: 1px solid #dfd2ff;
-      border-radius: 12px;
-      font: inherit;
-      font-size: 14px;
-      cursor: pointer;
-      outline: none;
-      appearance: none;
+    }
     
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235538bf' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 16px center;
-      background-size: 16px;
+    .filter-row-top .filter-group {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: none;
+    }
     
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    .filter-row-top .search-group {
+      flex: 1.4 1 0;
+    }
+    
+    .filter-row-bottom {
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    
+    .filter-row-bottom .platform-filter-group,
+    .filter-row-bottom .control-filter-group {
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: none;
+    }
+    
+    .platform-filter,
+    .control-filter {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
+    .filter-row-bottom .reset-filters {
+      flex: 0 0 auto;
+      width: auto;
+      white-space: nowrap;
+    }
+    
+    @media (max-width: 900px) {
+      .filter-row {
+        flex-wrap: wrap;
+      }
+    
+      .filter-row-top .filter-group {
+        flex: 1 1 220px;
+      }
+    
+      .filter-row-top .search-group {
+        flex: 1 1 260px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .game-filters {
+        gap: 16px;
+        padding: 14px;
+      }
+    
+      .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+      }
+    
+      .filter-row .filter-group {
+        flex: none;
+        width: 100%;
+        min-width: 0;
+        gap: 5px;
+      }
+    
+      .filter-row-bottom .platform-filter-group,
+      .filter-row-bottom .control-filter-group {
+        align-items: flex-start;
+      }
+    
+      .platform-filter,
+      .control-filter {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+    
+      .filter-row-bottom .reset-filters {
+        width: 100%;
+      }
     }
 
-    .filter-group select:hover {
-      border-color: #7655e8;
-    }
-    
-    .filter-group select:focus {
-      border-color: #7655e8;
-      box-shadow: 0 0 0 3px rgba(118, 85, 232, 0.15);
-    }
     
     /* Filter layout on tablets and mobile */
     @media (max-width: 900px) {
@@ -762,7 +808,11 @@
     <h2>🎲 My Games</h2>
     <p>Explore the games from my little studio.</p>
 
-    <div class="game-filters">
+    
+  <div class="game-filters">
+  
+    <!-- Baris atas -->
+    <div class="filter-row filter-row-top">
       <div class="filter-group">
         <label for="sort-games">Sort Games</label>
         <select id="sort-games">
@@ -772,21 +822,21 @@
           <option value="za">Alphabetical (Z–A)</option>
         </select>
       </div>
-    
+  
       <div class="filter-group">
         <label for="project-filter">Project Type</label>
         <select id="project-filter">
           <option value="all">All Project Types</option>
         </select>
       </div>
-
+  
       <div class="filter-group">
         <label for="genre-filter">Genre</label>
         <select id="genre-filter">
           <option value="all">All Genres</option>
         </select>
       </div>
-
+  
       <div class="filter-group search-group">
         <label for="game-search">Search Games</label>
         <input
@@ -796,47 +846,68 @@
           autocomplete="off"
         />
       </div>
-
+    </div>
+  
+    <!-- Baris bawah -->
+    <div class="filter-row filter-row-bottom">
+  
       <div class="filter-group platform-filter-group">
         <label>Platform</label>
-      
+  
         <div class="platform-filter" role="group" aria-label="Filter games by platform">
-          <button type="button" class="platform-btn active" data-platform="all" aria-pressed="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="3" width="7" height="7" rx="1"/>
-              <rect x="14" y="3" width="7" height="7" rx="1"/>
-              <rect x="3" y="14" width="7" height="7" rx="1"/>
-              <rect x="14" y="14" width="7" height="7" rx="1"/>
-            </svg>
+          <button type="button" class="platform-btn active"
+            data-platform="all" aria-pressed="true">
             <span>All</span>
             <span class="platform-count" id="count-all">0</span>
           </button>
-      
-          <button type="button" class="platform-btn" data-platform="PC" aria-pressed="false">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="3" y="4" width="18" height="13" rx="2"/>
-              <path d="M8 21h8M12 17v4"/>
-            </svg>
+  
+          <button type="button" class="platform-btn"
+            data-platform="PC" aria-pressed="false">
             <span>PC</span>
             <span class="platform-count" id="count-pc">0</span>
           </button>
-      
-          <button type="button" class="platform-btn" data-platform="Mobile" aria-pressed="false">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="6" y="2" width="12" height="20" rx="2"/>
-              <path d="M10 18h4"/>
-            </svg>
+  
+          <button type="button" class="platform-btn"
+            data-platform="Mobile" aria-pressed="false">
             <span>Mobile</span>
             <span class="platform-count" id="count-mobile">0</span>
           </button>
+  
+          <button type="button" class="platform-btn"
+            data-platform="Vending Machine" aria-pressed="false">
+            <span>Vending Machine</span>
+            <span class="platform-count" id="count-vending-machine">0</span>
+          </button>
         </div>
       </div>
-
+  
+      <div class="filter-group control-filter-group">
+        <label>Control</label>
+  
+        <div class="control-filter" role="group" aria-label="Filter games by control">
+          <button type="button" class="control-btn active"
+            data-control="all" aria-pressed="true">All</button>
+  
+          <button type="button" class="control-btn"
+            data-control="Keyboard" aria-pressed="false">Keyboard</button>
+  
+          <button type="button" class="control-btn"
+            data-control="Mouse" aria-pressed="false">Mouse</button>
+  
+          <button type="button" class="control-btn"
+            data-control="Touch" aria-pressed="false">Touch</button>
+  
+          <button type="button" class="control-btn"
+            data-control="Gamepad" aria-pressed="false">Gamepad</button>
+        </div>
+      </div>
+  
       <button type="button" id="reset-filters" class="reset-filters">
         Reset Filters ↺
       </button>
-
+  
     </div>
+  </div>
 
     <div id="game-grid" class="game-grid">
       <p class="message">Loading games...</p>
@@ -847,37 +918,46 @@
   <footer>Made with 💜 and Construct 3</footer>
 
   <script>
+
     function updatePlatformCounts(games) {
       const counts = {
         all: games.length,
         pc: 0,
-        mobile: 0
+        mobile: 0,
+        vendingMachine: 0
       };
-
+    
       games.forEach(game => {
         const platforms = Array.isArray(game.platform)
           ? game.platform
           : game.platform
             ? [game.platform]
             : [];
-
+    
         const normalizedPlatforms = platforms.map(platform =>
-          platform.toLowerCase().trim()
+          String(platform).toLowerCase().trim()
         );
-
+    
         if (normalizedPlatforms.includes("pc")) {
           counts.pc++;
         }
-
+    
         if (normalizedPlatforms.includes("mobile")) {
           counts.mobile++;
         }
+    
+        if (normalizedPlatforms.includes("vending machine")) {
+          counts.vendingMachine++;
+        }
       });
-
+    
       document.getElementById("count-all").textContent = counts.all;
       document.getElementById("count-pc").textContent = counts.pc;
       document.getElementById("count-mobile").textContent = counts.mobile;
+      document.getElementById("count-vending-machine").textContent =
+        counts.vendingMachine;
     }
+
     
     async function loadGames() {
       const grid = document.getElementById("game-grid");
@@ -1136,6 +1216,8 @@ function filterGames() {
   const sortOrder = sortGames.value;
   const selectedPlatform =
   document.querySelector(".platform-btn.active")?.dataset.platform || "all";
+  const selectedControl =
+  document.querySelector(".control-btn.active")?.dataset.control || "all";
   const status = document.getElementById("status");
   const searchTerm = gameSearch.value.trim().toLowerCase();
 
@@ -1159,6 +1241,14 @@ function filterGames() {
       cardPlatforms.some(
         platform => platform.toLowerCase() === selectedPlatform.toLowerCase()
       );
+    
+    const cardControls = JSON.parse(card.dataset.controls || "[]");
+
+    const matchesControl =
+      selectedControl === "all" ||
+      cardControls.some(
+        control => control.toLowerCase() === selectedControl.toLowerCase()
+      );
 
     const title = card.querySelector("h3").textContent.trim();
     const matchesSearch =
@@ -1168,7 +1258,8 @@ function filterGames() {
       matchesProject &&
       matchesGenre &&
       matchesSearch &&
-      matchesPlatform
+      matchesPlatform &&
+      matchesControl
     );
   });
 
