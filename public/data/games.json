@@ -34,7 +34,7 @@
     "featured": true,
     "published": true,
     "gameUrl": "/games/spin-the-wheel/",
-    "controls": "Mouse or touch",
+    "controls": ["Mouse", "touch"],
     "platform": ["PC", "Mobile"]
   },
   {
