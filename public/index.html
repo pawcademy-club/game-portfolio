@@ -511,43 +511,71 @@
         console.error(error);
       }
     }
+    
+function filterGames() {
+  const projectType = projectFilter.value;
+  const genre = genreFilter.value;
+  const sortOrder = sortGames.value;
+  const status = document.getElementById("status");
+  const searchTerm = gameSearch.value.trim().toLowerCase();
 
-    function filterGames() {
-      const projectType = projectFilter.value;
-      const genre = genreFilter.value;
-      const status = document.getElementById("status");
-      const searchTerm = gameSearch.value.trim().toLowerCase();
-    
-      const cards = document.querySelectorAll("#game-grid .game-card");
-    
-      cards.forEach(card => {
-        const matchesProject =
-          projectType === "all" ||
-          card.dataset.projectType === projectType;
-    
-        const matchesGenre =
-          genre === "all" ||
-          card.dataset.genre === genre;
-    
-        
-        const title = card.querySelector("h3").textContent.toLowerCase();
-        const matchesSearch = title.includes(searchTerm);
-        
-        card.hidden = !(
-          matchesProject &&
-          matchesGenre &&
-          matchesSearch
-        );
+  const grid = document.getElementById("game-grid");
+  const cards = [...grid.querySelectorAll(".game-card")];
 
-      });
-    
-      const visibleCount = [...cards].filter(
-        card => !card.hidden
-      ).length;
-    
-      status.textContent =
-        visibleCount + " games in the collection.";
+  // Filter games
+  cards.forEach(card => {
+    const matchesProject =
+      projectType === "all" ||
+      card.dataset.projectType === projectType;
+
+    const matchesGenre =
+      genre === "all" ||
+      card.dataset.genre === genre;
+
+    const title = card.querySelector("h3").textContent.trim();
+    const matchesSearch =
+      title.toLowerCase().includes(searchTerm);
+
+    card.hidden = !(
+      matchesProject &&
+      matchesGenre &&
+      matchesSearch
+    );
+  });
+
+  // Sort games
+  const sortedCards = [...cards].sort((a, b) => {
+    const titleA = a.querySelector("h3").textContent.trim();
+    const titleB = b.querySelector("h3").textContent.trim();
+
+    if (sortOrder === "az") {
+      return titleA.localeCompare(titleB);
     }
+
+    if (sortOrder === "za") {
+      return titleB.localeCompare(titleA);
+    }
+
+    const dateA = Date.parse(a.dataset.date || "");
+    const dateB = Date.parse(b.dataset.date || "");
+
+    const timeA = Number.isNaN(dateA) ? 0 : dateA;
+    const timeB = Number.isNaN(dateB) ? 0 : dateB;
+
+    if (sortOrder === "oldest") {
+      return timeA - timeB;
+    }
+
+    return timeB - timeA;
+  });
+
+  sortedCards.forEach(card => grid.appendChild(card));
+
+  const visibleCount = cards.filter(card => !card.hidden).length;
+
+  status.textContent =
+    visibleCount + " games in the collection.";
+}
 
     const sortGames = document.getElementById("sort-games");
     const projectFilter = document.getElementById("project-filter");
