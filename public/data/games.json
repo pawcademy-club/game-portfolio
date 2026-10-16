@@ -1,6 +1,7 @@
 
 [
   
+  
   {
     "id": "spin-the-wheel",
     "title": "Spin the Wheel",
@@ -8,11 +9,18 @@
     "description": "Spin the wheel and discover the fun!",
     "cover": "/assets/covers/spin-the-wheel.webp",
     "screenshots": [],
-    "video": "",
+    "video": "/assets/videos/spin-the-wheel-gameplay.mp4",
+    "developer": "Pawcademy",
+    "features": [
+      "Spin the wheel",
+      "Simple and fun gameplay",
+      "Mouse and touch support"
+    ],
     "featured": true,
     "published": true,
     "gameUrl": "/games/spin-the-wheel/",
-    "controls": "Mouse or touch"
+    "controls": "Mouse or touch",
+    "platform": ["PC", "Mobile"]
   },
   {
     "id": "cozy-island",
