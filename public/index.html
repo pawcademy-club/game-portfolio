@@ -549,12 +549,13 @@
         visibleCount + " games in the collection.";
     }
 
-    
+    const sortGames = document.getElementById("sort-games");
     const projectFilter = document.getElementById("project-filter");
     const genreFilter = document.getElementById("genre-filter");
     const resetFilters = document.getElementById("reset-filters");
     const gameSearch = document.getElementById("game-search");
-    
+
+    sortGames.addEventListener("change", filterGames);
     projectFilter.addEventListener("change", filterGames);
     genreFilter.addEventListener("change", filterGames);
     gameSearch.addEventListener("input", filterGames);
