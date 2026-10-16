@@ -738,11 +738,53 @@ function filterGames() {
   });
 
   sortedCards.forEach(card => grid.appendChild(card));
-
+  
   const visibleCount = cards.filter(card => !card.hidden).length;
-
+  
+  const existingEmptyState = grid.querySelector(".empty-state");
+  if (existingEmptyState) {
+    existingEmptyState.remove();
+  }
+  
+  if (visibleCount === 0) {
+    const emptyState = document.createElement("div");
+    emptyState.className = "empty-state";
+  
+    const paw = document.createElement("div");
+    paw.className = "empty-state-paw";
+    paw.setAttribute("aria-hidden", "true");
+    paw.textContent = "🐾";
+  
+    const title = document.createElement("h3");
+    title.textContent = "No games found!";
+  
+    const message = document.createElement("p");
+    message.textContent =
+      "Oops! We couldn't find a game that matches your search or filters. Try another keyword or clear your filters to explore all our games.";
+  
+    const button = document.createElement("button");
+    button.className = "empty-state-button";
+    button.type = "button";
+    button.textContent = "Clear Search & Filters";
+  
+    button.addEventListener("click", () => {
+      projectFilter.value = "all";
+      genreFilter.value = "all";
+      gameSearch.value = "";
+      filterGames();
+    });
+  
+    emptyState.append(paw, title, message, button);
+    grid.appendChild(emptyState);
+  
+    status.textContent = "No matching games.";
+    return;
+  }
+  
   status.textContent =
     visibleCount + " games in the collection.";
+
+  
 }
 
     const sortGames = document.getElementById("sort-games");
