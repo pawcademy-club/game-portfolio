@@ -703,12 +703,14 @@
             {
               className: "platform",
               icon: "monitor-smartphone",
-              label: game.platform || "Web"
+              label: Array.isArray(game.platform)
+                ? game.platform.join(" · ")
+                : game.platform || "Web"
             },
             {
               className: "control",
               icon: "mouse-pointer-2",
-              label: game.control || "Keyboard"
+              label: game.controls || "Keyboard"
             }
           ];
 
