@@ -46,12 +46,11 @@
     "screenshots": [
       "/assets/screenshots/jigsaw-puzzle-1.webp",
       "/assets/screenshots/jigsaw-puzzle-2.webp",
-      "/assets/screenshots/jigsaw-puzzle-3.webp",
       "/assets/screenshots/jigsaw-puzzle-4.webp",
       "/assets/screenshots/jigsaw-puzzle-5.webp",
       "/assets/screenshots/jigsaw-puzzle-6.webp"
     ],
-    "video": "/assets/videos/jigsaw-puzzle.mp4",
+    "video": "",
     "developer": "Pawcademy",
     
     "developmentDate": "2026-07",
