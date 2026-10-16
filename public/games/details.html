@@ -741,12 +741,36 @@
         ]
       ];
 
-      fields.forEach(([label, value]) => {
+      /*fields.forEach(([label, value]) => {
         const item = createElement("div", "metadata-item");
         item.append(createElement("span", "metadata-label", label));
         item.append(createElement("div", "metadata-value", value));
         metadata.append(item);
-      });
+      });*/
+
+      
+        fields.forEach(([label, value]) => {
+          if (!value) return;
+        
+          const item = createElement("div", "metadata-item");
+        
+          const icons = {
+            "Development Date": "📅",
+            "Project Type": "📁",
+            "Client / Organization": "👥",
+            "Role": "🎨",
+            "Game Engine": "💻",
+            "Status": "✅"
+          };
+        
+          item.append(
+            createElement("div", "project-info-icon", icons[label] || "✨")
+          );
+          item.append(createElement("span", "metadata-label", label));
+          item.append(createElement("div", "metadata-value", value));
+          metadata.append(item);
+        });
+
 
       section.append(metadata);
       return section;
