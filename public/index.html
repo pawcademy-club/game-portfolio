@@ -620,10 +620,44 @@
 
             art.replaceChildren(img);
           }
+          
+          const badges = document.createElement("div");
+          badges.className = "game-card-badges";
+          
+          const badgeItems = [
+            {
+              className: "genre",
+              icon: "🎮",
+              label: game.genre || "Game"
+            },
+            {
+              className: "platform",
+              icon: "🖥️",
+              label: game.platform || "Web"
+            },
+            {
+              className: "control",
+              icon: "🕹️",
+              label: game.control || "Keyboard"
+            }
+          ];
+          
+          badgeItems.forEach(item => {
+            const badge = document.createElement("span");
+            badge.className = `game-badge ${item.className}`;
+          
+            const icon = document.createElement("span");
+            icon.className = "game-badge-icon";
+            icon.setAttribute("aria-hidden", "true");
+            icon.textContent = item.icon;
+          
+            const label = document.createElement("span");
+            label.textContent = item.label;
+          
+            badge.append(icon, label);
+            badges.append(badge);
+          });
 
-          const genre = document.createElement("div");
-          genre.className = "genre";
-          genre.textContent = game.genre || "Game";
 
           const title = document.createElement("h3");
           title.textContent = game.title || "Untitled Game";
@@ -633,7 +667,7 @@
             game.description || "Discover this game.";
 
 
-          card.append(art, genre, title, description);
+          card.append(art, badges, title, description);
 
           const actions = document.createElement("div");
           actions.className = "game-card-actions";
