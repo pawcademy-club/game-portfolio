@@ -542,15 +542,13 @@
     
     const projectFilter = document.getElementById("project-filter");
     const genreFilter = document.getElementById("genre-filter");
+    const resetFilters = document.getElementById("reset-filters");
+    const gameSearch = document.getElementById("game-search");
     
     projectFilter.addEventListener("change", filterGames);
     genreFilter.addEventListener("change", filterGames);
     gameSearch.addEventListener("input", filterGames);
-    
-    const resetFilters = document.getElementById("reset-filters");
-    const gameSearch = document.getElementById("game-search");
-
-    
+  
     resetFilters.addEventListener("click", () => {
       projectFilter.value = "all";
       genreFilter.value = "all";
