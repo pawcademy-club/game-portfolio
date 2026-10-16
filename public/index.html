@@ -274,10 +274,10 @@
 
     /* Pawcademy Game Filters */
     .game-filters {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: end;
+      gap: 22px 20px;
       margin: 28px 0 32px;
       padding: 24px;
       background: linear-gradient(135deg, #fff9ed, #f5f0ff);
@@ -290,9 +290,8 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-      flex: 1;
-      min-width: 200px;
-      max-width: 280px;
+      min-width: 0;
+      width: 100%;
     }
     
     .filter-group label {
@@ -333,9 +332,18 @@
       box-shadow: 0 0 0 3px rgba(118, 85, 232, 0.15);
     }
     
+    /* Filter layout on tablets and mobile */
+    @media (max-width: 900px) {
+      .game-filters {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 16px;
+      }
+    }
+    
+    /* Filter layout on small screens */
     @media (max-width: 600px) {
       .game-filters {
-        flex-direction: column;
+        grid-template-columns: minmax(0, 1fr);
         gap: 16px;
         padding: 18px;
       }
@@ -348,7 +356,8 @@
 
     /* Reset Filters Button */
     .reset-filters {
-      align-self: flex-end;
+      align-self: stretch;
+      width: 100%;
       padding: 12px 20px;
       color: #5538bf;
       background: #ffffff;
@@ -479,7 +488,9 @@
     
     /* Platform filter buttons */
     .platform-filter-group {
-      max-width: 320px;
+      min-width: 0;
+      max-width: none;
+      width: 100%;
     }
     
     .platform-filter {
