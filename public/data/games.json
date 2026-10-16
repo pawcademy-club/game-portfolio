@@ -15,6 +15,17 @@
     ],
     "video": "/assets/videos/spin-the-wheel-gameplay.mp4",
     "developer": "Pawcademy",
+    
+    "developmentDate": "",
+    "client": {
+      "name": "",
+      "visibility": "confidential"
+    },
+    "projectType": "",
+    "role": [],
+    "engine": "Construct 3",
+    "status": "completed",
+    
     "features": [
       "Spin the wheel",
       "Simple and fun gameplay",
