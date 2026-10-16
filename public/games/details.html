@@ -64,8 +64,10 @@
     .cover {
       display: block;
       width: 100%;
+      height: 440px;
       max-height: 440px;
-      object-fit: contain;
+      object-fit: cover;
+      object-position: center;
       background: #eef1f8;
       border-radius: 12px;
     }
@@ -364,6 +366,12 @@
       .lightbox-next {
         right: 8px;
       }
+
+      .cover {
+        height: 300px;
+        max-height: 300px;
+      }
+      
     }
 
         /* Pawcademy visual theme */
