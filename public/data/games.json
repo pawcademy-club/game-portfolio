@@ -20,6 +20,7 @@
     "client": {
       "name": "",
       "visibility": "confidential"
+    },
     "projectType": "internal",
     "role": ["Game Development", "Programming", "Art"],
     "engine": "Construct 3",
