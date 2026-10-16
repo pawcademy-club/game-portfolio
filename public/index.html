@@ -262,10 +262,10 @@
           // Link to the game details page
           const detailsLink = document.createElement("a");
           detailsLink.className = "button";
-          detailsLink.href =
-            game.detailsUrl || (game.gameUrl
-              ? game.gameUrl.replace(/\/$/, "") + "/details.html"
-              : "#");
+          
+          detailsLink.href = "/games/details.html?id=" +
+          encodeURIComponent(game.id);
+          
           detailsLink.textContent = "View Details";
           actions.append(detailsLink);
           
