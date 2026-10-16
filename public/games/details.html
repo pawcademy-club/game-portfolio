@@ -491,17 +491,25 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .project-info-icon {
+    
+    .project-information .project-info-icon {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 38px;
-      height: 38px;
+      width: 42px;
+      height: 42px;
       margin-bottom: 14px;
+      color: #7655e8;
       background: #f0eaff;
-      border-radius: 12px;
-      font-size: 20px;
+      border: 1px solid #e5dcff;
+      border-radius: 13px;
     }
+    
+    .project-information .project-info-icon svg {
+      display: block;
+      flex-shrink: 0;
+    }
+
 
     .project-information .metadata-item:hover {
       transform: translateY(-3px);
@@ -815,19 +823,33 @@
         if (!value) return;
       
         const item = createElement("div", "metadata-item");
-      
         const icons = {
-          "Development Date": "📅",
-          "Project Type": "📁",
-          "Client / Organization": "👥",
-          "Role": "🎨",
-          "Game Engine": "💻",
-          "Status": "✅"
+          "Development Date": "M8 2v4 M16 2v4 M3 10h18 M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2",
+          "Project Type": "M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
+          "Client / Organization": "M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M20 8v6 M23 11h-6",
+          "Role": "m12 3 2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z M19 14l1.5 3.5L24 19l-3.5 1.5L19 24l-1.5-3.5L14 19l3.5-1.5z",
+          "Game Engine": "m12 8 4 4-4 4-4-4z M3 12h5 M16 12h5 M12 3v5 M12 16v5",
+          "Status": "m5 12 4 4L19 6"
         };
-      
-        item.append(
-          createElement("div", "project-info-icon", icons[label] || "✨")
-        );
+        
+        const svgNS = "http://www.w3.org/2000/svg";
+        const iconBox = createElement("div", "project-info-icon");
+        const svg = document.createElementNS(svgNS, "svg");
+        svg.setAttribute("viewBox", "0 0 24 24");
+        svg.setAttribute("width", "22");
+        svg.setAttribute("height", "22");
+        svg.setAttribute("fill", "none");
+        svg.setAttribute("stroke", "currentColor");
+        svg.setAttribute("stroke-width", "1.8");
+        svg.setAttribute("stroke-linecap", "round");
+        svg.setAttribute("stroke-linejoin", "round");
+        
+        const path = document.createElementNS(svgNS, "path");
+        path.setAttribute("d", icons[label] || "M12 5v14 M5 12h14");
+        svg.append(path);
+        iconBox.append(svg);
+        item.append(iconBox);
+        
         item.append(createElement("span", "metadata-label", label));
         item.append(createElement("div", "metadata-value", value));
       
