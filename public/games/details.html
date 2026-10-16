@@ -569,6 +569,37 @@
       background: #fff5cf;
       border-color: #f3e3a0;
     }
+    
+    /* Project Type Badge */
+    .project-information .project-type-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.4;
+      border: 1px solid transparent;
+    }
+    
+    .project-information .project-type-badge.internal {
+      color: #6242c5;
+      background: #f0eaff;
+      border-color: #dfd2ff;
+    }
+    
+    .project-information .project-type-badge.client {
+      color: #245b91;
+      background: #e8f3ff;
+      border-color: #cce4ff;
+    }
+    
+    .project-information .project-type-badge.prototype {
+      color: #8a6200;
+      background: #fff5cf;
+      border-color: #f3e3a0;
+    }
 
   </style>
 </head>
@@ -921,9 +952,17 @@
             value
           );
           item.append(statusBadge);
+        } else if (label === "Project Type") {
+          const projectTypeBadge = createElement(
+            "span",
+            "project-type-badge " + (game.projectType || "internal"),
+            value
+          );
+          item.append(projectTypeBadge);
         } else {
           item.append(createElement("div", "metadata-value", value));
         }
+
         metadata.append(item);
       });
 
