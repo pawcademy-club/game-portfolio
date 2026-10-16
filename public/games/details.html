@@ -736,12 +736,13 @@
       return section;
     }
 
+    
     function renderMetadata(game) {
       const section = createElement("section", "panel");
       section.append(createElement("h2", "", "Game Information"));
-
+    
       const metadata = createElement("div", "metadata");
-
+    
       const fields = [
         ["Developer", game.developer || "Not specified"],
         ["Controls", game.controls || "Not specified"],
@@ -752,38 +753,14 @@
             : "Not specified"
         ]
       ];
-
-      /*fields.forEach(([label, value]) => {
+    
+      fields.forEach(([label, value]) => {
         const item = createElement("div", "metadata-item");
         item.append(createElement("span", "metadata-label", label));
         item.append(createElement("div", "metadata-value", value));
         metadata.append(item);
-      });*/
-
-      
-        fields.forEach(([label, value]) => {
-          if (!value) return;
-        
-          const item = createElement("div", "metadata-item");
-        
-          const icons = {
-            "Development Date": "📅",
-            "Project Type": "📁",
-            "Client / Organization": "👥",
-            "Role": "🎨",
-            "Game Engine": "💻",
-            "Status": "✅"
-          };
-        
-          item.append(
-            createElement("div", "project-info-icon", icons[label] || "✨")
-          );
-          item.append(createElement("span", "metadata-label", label));
-          item.append(createElement("div", "metadata-value", value));
-          metadata.append(item);
-        });
-
-
+      });
+    
       section.append(metadata);
       return section;
     }
@@ -833,16 +810,30 @@
           }[game.status] || ""
         ]
       ];
-    
+  
       fields.forEach(([label, value]) => {
         if (!value) return;
-    
+      
         const item = createElement("div", "metadata-item");
+      
+        const icons = {
+          "Development Date": "📅",
+          "Project Type": "📁",
+          "Client / Organization": "👥",
+          "Role": "🎨",
+          "Game Engine": "💻",
+          "Status": "✅"
+        };
+      
+        item.append(
+          createElement("div", "project-info-icon", icons[label] || "✨")
+        );
         item.append(createElement("span", "metadata-label", label));
         item.append(createElement("div", "metadata-value", value));
+      
         metadata.append(item);
       });
-    
+
       if (!metadata.children.length) return null;
     
       section.append(metadata);
