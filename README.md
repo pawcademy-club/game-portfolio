@@ -63,3 +63,17 @@ Game eksperimen atau demo:
 - Jangan mengarang nama klien, tanggal, pencapaian, atau detail proyek.
 - Pertahankan format JSON yang valid.
 - Setelah mengubah data, uji halaman detail game di website Pawcademy.
+
+## 5. Status
+
+Proyek selesai dikerjakan:
+
+`"status": "completed"`
+
+Proyek sedang/masih dikerjakan:
+
+`"status": "in-progress",`
+
+Proyek masih berupa eksperimen atau demo:
+
+`"status": "prototype"`
