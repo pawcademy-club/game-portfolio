@@ -704,6 +704,68 @@
       return section;
     }
 
+    
+    function renderProjectInformation(game) {
+      const section = createElement("section", "panel");
+      section.append(
+        createElement("h2", "", "Project Information")
+      );
+    
+      const metadata = createElement("div", "metadata");
+      const client = game.client || {};
+    
+      const fields = [
+        [
+          "Development Date",
+          game.developmentDate || ""
+        ],
+        [
+          "Project Type",
+          {
+            internal: "Internal Project",
+            client: "Client Project",
+            prototype: "Prototype / Demo"
+          }[game.projectType] || ""
+        ],
+        [
+          "Client / Organization",
+          client.visibility === "public"
+            ? (client.name || "")
+            : client.visibility === "confidential"
+              ? "Confidential Client"
+              : ""
+        ],
+        [
+          "Role",
+          Array.isArray(game.role) ? game.role.join(", ") : ""
+        ],
+        ["Game Engine", game.engine || ""],
+        [
+          "Status",
+          {
+            completed: "Completed",
+            "in-progress": "In Progress",
+            prototype: "Prototype"
+          }[game.status] || ""
+        ]
+      ];
+    
+      fields.forEach(([label, value]) => {
+        if (!value) return;
+    
+        const item = createElement("div", "metadata-item");
+        item.append(createElement("span", "metadata-label", label));
+        item.append(createElement("div", "metadata-value", value));
+        metadata.append(item);
+      });
+    
+      if (!metadata.children.length) return null;
+    
+      section.append(metadata);
+      return section;
+    }
+
+
     function renderFeatures(game) {
       const section = createElement("section", "panel");
       section.append(createElement("h2", "", "Key Features"));
@@ -894,8 +956,11 @@
 
         hero.append(actions);
         fragment.append(hero);
-
         fragment.append(renderMetadata(game));
+        const projectInformation = renderProjectInformation(game);
+        if (projectInformation) {
+          fragment.append(projectInformation);
+        }
         fragment.append(renderFeatures(game));
         fragment.append(renderScreenshots(game));
         fragment.append(renderVideo(game));
