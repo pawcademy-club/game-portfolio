@@ -343,18 +343,65 @@
     }
     
     /* Filter layout on small screens */
+
     @media (max-width: 600px) {
       .game-filters {
-        grid-template-columns: minmax(0, 1fr);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
         gap: 10px;
+        margin: 20px 0 24px;
         padding: 14px;
       }
     
-      .filter-group {
+      .game-filters .filter-group {
+        flex: none;
+        width: 100%;
         min-width: 0;
         max-width: none;
+        gap: 5px;
+        margin: 0;
+      }
+    
+      .game-filters .filter-group label {
+        margin: 0;
+        line-height: 1.3;
+      }
+    
+      .game-filters .filter-group select,
+      .game-filters .filter-group input[type="search"] {
+        min-height: 42px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    
+      .game-filters .platform-filter-group {
+        flex: none;
+        width: 100%;
+        align-items: center;
+        margin: 0;
+      }
+    
+      .game-filters .platform-filter {
+        justify-content: center;
+        gap: 6px;
+      }
+    
+      .game-filters .platform-btn {
+        min-height: 38px;
+        padding: 8px 10px;
+      }
+    
+      .game-filters .reset-filters {
+        align-self: stretch;
+        width: 100%;
+        min-height: 42px;
+        margin: 0;
+        box-sizing: border-box;
       }
     }
+
 
     /* Reset Filters Button */
     .reset-filters {
