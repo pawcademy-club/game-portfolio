@@ -464,6 +464,37 @@
     }
 
     
+    /* Project Information - Pawcademy */
+    .project-information .metadata-item {
+      background: linear-gradient(145deg, #ffffff, #faf7ff);
+      border: 1px solid #eee6ff;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(76, 53, 114, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .project-information .metadata-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(76, 53, 114, 0.10);
+    }
+    
+    .project-information .metadata-label {
+      color: #7655e8;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+    
+    .project-information .metadata-value {
+      color: #29233d;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+   
   </style>
 </head>
 
@@ -597,7 +628,7 @@
           )
         : [];
 
-      const section = createElement("section", "panel");
+      const section = createElement("section", "panel project-information");
       section.append(createElement("h2", "", "Screenshots"));
 
       if (!screenshots.length) {
