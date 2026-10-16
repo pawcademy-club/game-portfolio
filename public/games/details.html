@@ -489,6 +489,7 @@
       padding: 20px;
       box-shadow: 0 4px 14px rgba(76, 53, 114, 0.05);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
     }
 
     
@@ -503,6 +504,9 @@
       background: #f0eaff;
       border: 1px solid #e5dcff;
       border-radius: 13px;
+      margin-left: auto;
+      margin-right: auto;
+
     }
     
     .project-information .project-info-icon svg {
@@ -522,6 +526,7 @@
       font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
+      text-align: center;
     }
     
     .project-information .metadata-value {
@@ -530,6 +535,7 @@
       font-weight: 600;
       line-height: 1.7;
       overflow-wrap: anywhere;
+      text-align: center;
     }
 
     /* Project Status Badge */
@@ -542,6 +548,7 @@
       font-weight: 700;
       line-height: 1.4;
       border: 1px solid transparent;
+      justify-content: center;
     }
     
     .project-information .project-status-badge.completed {
@@ -814,10 +821,35 @@
       const client = game.client || {};
     
       const fields = [
+        
+
         [
           "Development Date",
-          game.developmentDate || ""
+          game.developmentDate
+            ? (() => {
+                const dateParts = game.developmentDate.split("-");
+                const year = dateParts[0];
+                const month = dateParts[1];
+        
+                if (!month) return year;
+        
+                const monthNames = [
+                  "Januari", "Februari", "Maret", "April",
+                  "Mei", "Juni", "Juli", "Agustus",
+                  "September", "Oktober", "November", "Desember"
+                ];
+        
+                const monthIndex = Number(month) - 1;
+        
+                if (monthIndex < 0 || monthIndex > 11) {
+                  return game.developmentDate;
+                }
+        
+                return `${monthNames[monthIndex]} ${year}`;
+              })()
+            : ""
         ],
+
         [
           "Project Type",
           {
