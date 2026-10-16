@@ -38,6 +38,44 @@
     "platform": ["PC", "Mobile"]
   },
   {
+    "id": "jigsaw-puzzle",
+    "title": "Jigsaw Puzzle",
+    "genre": "Puzzle",
+    "description": "Piece together adorable cats in this fun and relaxing jigsaw puzzle!",
+    "cover": "/assets/covers/jigsaw-puzzle.webp",
+    "screenshots": [
+      "/assets/screenshots/jigsaw-puzzle-1.webp",
+      "/assets/screenshots/jigsaw-puzzle-2.webp",
+      "/assets/screenshots/jigsaw-puzzle-3.webp",
+      "/assets/screenshots/jigsaw-puzzle-4.webp",
+      "/assets/screenshots/jigsaw-puzzle-5.webp",
+      "/assets/screenshots/jigsaw-puzzle-6.webp"
+    ],
+    "video": "/assets/videos/jigsaw-puzzle.mp4",
+    "developer": "Pawcademy",
+    
+    "developmentDate": "2026-07",
+    "client": {
+      "name": "",
+      "visibility": "confidential"
+    },
+    "projectType": "internal",
+    "role": ["Art, Game Development", "Programming"],
+    "engine": "Construct 3",
+    "status": "completed",
+    
+    "features": [
+      "Puzzle is fun",
+      "Simple and fun gameplay",
+      "Mouse and touch support"
+    ],
+    "featured": true,
+    "published": true,
+    "gameUrl": "/games/jigsaw-puzzle/",
+    "controls": "Mouse or touch",
+    "platform": ["PC", "Mobile"]
+  },
+  {
     "id": "cozy-island",
     "title": "Cozy Island",
     "genre": "Adventure",
