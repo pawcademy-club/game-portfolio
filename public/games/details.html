@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f7fb">
   <title>Game Details | Pawcademy</title>
 
   <style>
@@ -19,9 +20,13 @@
       color: #202638;
     }
 
+    a {
+      color: inherit;
+    }
+
     .container {
       width: 100%;
-      max-width: 900px;
+      max-width: 1050px;
       margin: 0 auto;
     }
 
@@ -33,17 +38,18 @@
       font-weight: bold;
     }
 
-    .game-panel {
+    .panel {
       padding: 24px;
-      background: white;
+      margin-bottom: 24px;
+      background: #fff;
       border-radius: 18px;
-      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
     }
 
     .cover {
       display: block;
       width: 100%;
-      max-height: 420px;
+      max-height: 440px;
       object-fit: contain;
       background: #eef1f8;
       border-radius: 12px;
@@ -60,12 +66,18 @@
     }
 
     h1 {
-      margin-bottom: 12px;
+      margin: 14px 0 12px;
+      font-size: clamp(28px, 5vw, 42px);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 23px;
     }
 
     .description {
-      line-height: 1.7;
-      color: #555e70;
+      color: #596174;
+      line-height: 1.8;
       white-space: pre-line;
     }
 
@@ -77,7 +89,9 @@
     }
 
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 12px 20px;
       border: 0;
       border-radius: 10px;
@@ -86,7 +100,7 @@
       text-decoration: none;
       font-weight: bold;
       cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
+      transition: transform .2s, background .2s;
     }
 
     .button:hover {
@@ -103,25 +117,237 @@
       background: #dce1ef;
     }
 
+    .metadata {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .metadata-item {
+      padding: 16px;
+      background: #f5f7fb;
+      border-radius: 12px;
+    }
+
+    .metadata-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #687187;
+      font-size: 13px;
+    }
+
+    .metadata-value {
+      font-weight: bold;
+      line-height: 1.6;
+      overflow-wrap: anywhere;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      padding: 14px;
+      background: #f5f7fb;
+      border-radius: 10px;
+      line-height: 1.5;
+    }
+
+    .feature-list li::before {
+      content: "✓ ";
+      color: #4057c8;
+      font-weight: bold;
+    }
+
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .screenshot-button {
+      display: block;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 12px;
+      background: #eef1f8;
+      cursor: pointer;
+      aspect-ratio: 16 / 10;
+    }
+
+    .screenshot-button img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .25s;
+    }
+
+    .screenshot-button:hover img {
+      transform: scale(1.05);
+    }
+
+    .video-player {
+      display: block;
+      width: 100%;
+      max-height: 600px;
+      background: #111;
+      border-radius: 12px;
+    }
+
+    .empty-message {
+      color: #687187;
+      line-height: 1.7;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+    }
+
+    .related-card {
+      overflow: hidden;
+      border: 1px solid #e8ebf2;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    .related-card img {
+      display: block;
+      width: 100%;
+      height: 145px;
+      object-fit: cover;
+      background: #eef1f8;
+    }
+
+    .related-card-content {
+      padding: 14px;
+    }
+
+    .related-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .related-card p {
+      color: #687187;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .related-card .button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 8px;
+    }
+
     .error {
       padding: 24px;
-      background: white;
+      background: #fff;
       border-radius: 12px;
       line-height: 1.7;
     }
 
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0, 0, 0, .92);
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      display: block;
+      max-width: min(100%, 1200px);
+      max-height: 82vh;
+      object-fit: contain;
+    }
+
+    .lightbox-close,
+    .lightbox-prev,
+    .lightbox-next {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .16);
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .lightbox-close {
+      top: 18px;
+      right: 18px;
+    }
+
+    .lightbox-prev {
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-next {
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-count {
+      position: absolute;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 14px;
+    }
+
+    .lightbox button:hover {
+      background: rgba(255, 255, 255, .3);
+    }
+
     @media (max-width: 600px) {
       body {
+        padding: 14px;
+      }
+
+      .panel {
         padding: 16px;
       }
 
-      .game-panel {
-        padding: 16px;
+      .screenshot-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
       }
 
-      .actions .button {
-        text-align: center;
-        flex: 1 1 100%;
+      .lightbox {
+        padding: 12px;
+      }
+
+      .lightbox-prev {
+        left: 8px;
+      }
+
+      .lightbox-next {
+        right: 8px;
       }
     }
   </style>
@@ -136,15 +362,341 @@
     </div>
   </main>
 
+  <div
+    id="lightbox"
+    class="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Screenshot viewer"
+    aria-hidden="true"
+  >
+    <button class="lightbox-close" id="lightboxClose"
+      type="button" aria-label="Close screenshot viewer">×</button>
+    <button class="lightbox-prev" id="lightboxPrev"
+      type="button" aria-label="Previous screenshot">‹</button>
+    <img id="lightboxImage" src="" alt="Enlarged game screenshot">
+    <button class="lightbox-next" id="lightboxNext"
+      type="button" aria-label="Next screenshot">›</button>
+    <div class="lightbox-count" id="lightboxCount"></div>
+  </div>
+
   <script>
+    const content = document.getElementById("content");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const lightboxCount = document.getElementById("lightboxCount");
+
+    let currentScreenshots = [];
+    let currentScreenshotIndex = 0;
+    let previousFocus = null;
+
+    function createElement(tag, className, text) {
+      const element = document.createElement(tag);
+
+      if (className) {
+        element.className = className;
+      }
+
+      if (text !== undefined && text !== null) {
+        element.textContent = text;
+      }
+
+      return element;
+    }
+
+    function createLink(text, href, className = "button") {
+      const link = createElement("a", className, text);
+      link.href = href;
+      return link;
+    }
+
+    function openLightbox(index) {
+      if (!currentScreenshots.length) return;
+
+      previousFocus = document.activeElement;
+      currentScreenshotIndex = index;
+      updateLightbox();
+
+      lightbox.classList.add("open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      document.getElementById("lightboxClose").focus();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+
+      if (previousFocus) {
+        previousFocus.focus();
+      }
+    }
+
+    function updateLightbox() {
+      lightboxImage.src = currentScreenshots[currentScreenshotIndex];
+      lightboxCount.textContent =
+        (currentScreenshotIndex + 1) + " / " + currentScreenshots.length;
+
+      const multiple = currentScreenshots.length > 1;
+      document.getElementById("lightboxPrev").hidden = !multiple;
+      document.getElementById("lightboxNext").hidden = !multiple;
+    }
+
+    function moveLightbox(direction) {
+      if (!currentScreenshots.length) return;
+
+      currentScreenshotIndex =
+        (currentScreenshotIndex + direction + currentScreenshots.length)
+        % currentScreenshots.length;
+
+      updateLightbox();
+    }
+
+    document.getElementById("lightboxClose")
+      .addEventListener("click", closeLightbox);
+
+    document.getElementById("lightboxPrev")
+      .addEventListener("click", () => moveLightbox(-1));
+
+    document.getElementById("lightboxNext")
+      .addEventListener("click", () => moveLightbox(1));
+
+    lightbox.addEventListener("click", event => {
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (!lightbox.classList.contains("open")) return;
+
+      if (event.key === "Escape") closeLightbox();
+      if (event.key === "ArrowLeft") moveLightbox(-1);
+      if (event.key === "ArrowRight") moveLightbox(1);
+    });
+
+    function renderScreenshots(game) {
+      const screenshots = Array.isArray(game.screenshots)
+        ? game.screenshots.filter(
+            item => typeof item === "string" && item.trim() !== ""
+          )
+        : [];
+
+      const section = createElement("section", "panel");
+      section.append(createElement("h2", "", "Screenshots"));
+
+      if (!screenshots.length) {
+        section.append(createElement(
+          "p",
+          "empty-message",
+          "Screenshots for this game will be available soon."
+        ));
+        return section;
+      }
+
+      currentScreenshots = screenshots;
+
+      const grid = createElement("div", "screenshot-grid");
+
+      screenshots.forEach((src, index) => {
+        const button = createElement("button", "screenshot-button");
+        button.type = "button";
+        button.setAttribute(
+          "aria-label",
+          "Open screenshot " + (index + 1)
+        );
+
+        const image = document.createElement("img");
+        image.src = src;
+        image.alt = (game.title || "Game") + " screenshot " + (index + 1);
+        image.loading = "lazy";
+
+        image.addEventListener("error", () => {
+          button.remove();
+        });
+
+        button.append(image);
+        button.addEventListener("click", () => openLightbox(index));
+        grid.append(button);
+      });
+
+      section.append(grid);
+      return section;
+    }
+
+    function renderVideo(game) {
+      const section = createElement("section", "panel");
+      section.append(createElement("h2", "", "Gameplay Video"));
+
+      if (
+        typeof game.video !== "string" ||
+        game.video.trim() === ""
+      ) {
+        section.append(createElement(
+          "p",
+          "empty-message",
+          "Gameplay video for this game will be available soon."
+        ));
+        return section;
+      }
+
+      const video = document.createElement("video");
+      video.className = "video-player";
+      video.controls = true;
+      video.preload = "metadata";
+      video.playsInline = true;
+
+      const source = document.createElement("source");
+      source.src = game.video;
+      source.type = "video/mp4";
+
+      video.append(source);
+      video.append(createElement(
+        "p",
+        "",
+        "Your browser does not support HTML video."
+      ));
+
+      section.append(video);
+      return section;
+    }
+
+    function renderMetadata(game) {
+      const section = createElement("section", "panel");
+      section.append(createElement("h2", "", "Game Information"));
+
+      const metadata = createElement("div", "metadata");
+
+      const fields = [
+        ["Developer", game.developer || "Not specified"],
+        ["Controls", game.controls || "Not specified"],
+        [
+          "Platform",
+          Array.isArray(game.platform) && game.platform.length
+            ? game.platform.join(", ")
+            : "Not specified"
+        ]
+      ];
+
+      fields.forEach(([label, value]) => {
+        const item = createElement("div", "metadata-item");
+        item.append(createElement("span", "metadata-label", label));
+        item.append(createElement("div", "metadata-value", value));
+        metadata.append(item);
+      });
+
+      section.append(metadata);
+      return section;
+    }
+
+    function renderFeatures(game) {
+      const section = createElement("section", "panel");
+      section.append(createElement("h2", "", "Key Features"));
+
+      const features = Array.isArray(game.features)
+        ? game.features.filter(
+            item => typeof item === "string" && item.trim() !== ""
+          )
+        : [];
+
+      if (!features.length) {
+        section.append(createElement(
+          "p",
+          "empty-message",
+          "Game features will be available soon."
+        ));
+        return section;
+      }
+
+      const list = createElement("ul", "feature-list");
+
+      features.forEach(feature => {
+        list.append(createElement("li", "", feature));
+      });
+
+      section.append(list);
+      return section;
+    }
+
+    function renderRelatedGames(games, currentGame) {
+      const section = createElement("section", "panel");
+      section.append(createElement("h2", "", "You May Also Like"));
+
+      const related = games
+        .filter(game =>
+          game.published === true &&
+          game.id !== currentGame.id
+        )
+        .slice(0, 4);
+
+      if (!related.length) {
+        section.append(createElement(
+          "p",
+          "empty-message",
+          "More games are coming soon."
+        ));
+        return section;
+      }
+
+      const grid = createElement("div", "related-grid");
+
+      related.forEach(game => {
+        const card = createElement("article", "related-card");
+
+        if (game.cover) {
+          const image = document.createElement("img");
+          image.src = game.cover;
+          image.alt = (game.title || "Game") + " cover";
+          image.loading = "lazy";
+
+          image.addEventListener("error", () => {
+            image.remove();
+          });
+
+          card.append(image);
+        }
+
+        const cardContent = createElement(
+          "div",
+          "related-card-content"
+        );
+
+        cardContent.append(createElement(
+          "h3",
+          "",
+          game.title || "Untitled Game"
+        ));
+
+        cardContent.append(createElement(
+          "p",
+          "",
+          game.description || "Discover this game."
+        ));
+
+        cardContent.append(createLink(
+          "View Details",
+          "/games/details.html?id=" + encodeURIComponent(game.id)
+        ));
+
+        grid.append(card);
+        card.append(cardContent);
+      });
+
+      section.append(grid);
+      return section;
+    }
+
     async function loadGameDetails() {
-      const content = document.getElementById("content");
       const params = new URLSearchParams(window.location.search);
       const gameId = params.get("id");
 
       if (!gameId) {
-        content.innerHTML =
-          '<div class="error">No game was selected. Please return to the portfolio and choose a game.</div>';
+        content.replaceChildren(createElement(
+          "div",
+          "error",
+          "No game was selected. Please return to the portfolio and choose a game."
+        ));
         return;
       }
 
@@ -156,67 +708,89 @@
         }
 
         const games = await response.json();
-        const game = games.find(item => item.id === gameId);
 
-        if (!game || game.published !== true) {
-          content.innerHTML =
-            '<div class="error">Game not found or not available.</div>';
+        if (!Array.isArray(games)) {
+          throw new Error("Games data is not a list.");
+        }
+
+        const game = games.find(item =>
+          item.id === gameId && item.published === true
+        );
+
+        if (!game) {
+          content.replaceChildren(createElement(
+            "div",
+            "error",
+            "Game not found or not available."
+          ));
           return;
         }
 
-        const cover = document.createElement("img");
-        cover.className = "cover";
-        cover.src = game.cover || "";
-        cover.alt = game.title || "Game cover";
+        document.title = (game.title || "Game Details") + " | Pawcademy";
+        currentScreenshots = [];
 
-        cover.addEventListener("error", () => {
-          cover.style.display = "none";
-        });
+        const fragment = document.createDocumentFragment();
+        const hero = createElement("section", "panel");
 
-        const panel = document.createElement("section");
-        panel.className = "game-panel";
+        if (game.cover) {
+          const cover = document.createElement("img");
+          cover.className = "cover";
+          cover.src = game.cover;
+          cover.alt = (game.title || "Game") + " cover";
 
-        const genre = document.createElement("span");
-        genre.className = "genre";
-        genre.textContent = game.genre || "Game";
-
-        const title = document.createElement("h1");
-        title.textContent = game.title || "Untitled Game";
-
-        const description = document.createElement("p");
-        description.className = "description";
-        description.textContent =
-          game.description || "Discover and enjoy this game.";
-
-        const actions = document.createElement("div");
-        actions.className = "actions";
-
-        const playLink = document.createElement("a");
-        playLink.className = "button";
-        playLink.href = game.gameUrl || "#";
-        playLink.textContent = "Play Game";
-
-        if (!game.gameUrl) {
-          playLink.setAttribute("aria-disabled", "true");
-          playLink.style.opacity = "0.5";
-          playLink.addEventListener("click", event => {
-            event.preventDefault();
+          cover.addEventListener("error", () => {
+            cover.remove();
           });
+
+          hero.append(cover);
         }
 
-        const backLink = document.createElement("a");
-        backLink.className = "button secondary";
-        backLink.href = "/";
-        backLink.textContent = "Back to Portfolio";
+        hero.append(createElement(
+          "span",
+          "genre",
+          game.genre || "Game"
+        ));
 
-        actions.append(playLink, backLink);
-        panel.append(cover, genre, title, description, actions);
-        content.replaceChildren(panel);
+        hero.append(createElement(
+          "h1",
+          "",
+          game.title || "Untitled Game"
+        ));
 
-        document.title = (game.title || "Game Details") + " | Pawcademy";
+        hero.append(createElement(
+          "p",
+          "description",
+          game.description || "Discover and enjoy this game."
+        ));
+
+        const actions = createElement("div", "actions");
+
+        if (game.gameUrl) {
+          actions.append(createLink("Play Game", game.gameUrl));
+        }
+
+        actions.append(createLink(
+          "Back to Portfolio",
+          "/",
+          "button secondary"
+        ));
+
+        hero.append(actions);
+        fragment.append(hero);
+
+        fragment.append(renderMetadata(game));
+        fragment.append(renderFeatures(game));
+        fragment.append(renderScreenshots(game));
+        fragment.append(renderVideo(game));
+        fragment.append(renderRelatedGames(games, game));
+
+        content.replaceChildren(fragment);
       } catch (error) {
-        content.innerHTML =
-          '<div class="error">Unable to load game details. Please try again later.</div>';
+        content.replaceChildren(createElement(
+          "div",
+          "error",
+          "Unable to load game details. Please check the game data and try again."
+        ));
       }
     }
 
