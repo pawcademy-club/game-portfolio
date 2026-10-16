@@ -547,6 +547,28 @@
         padding: 9px 14px;
       }
     }
+    
+    /* Platform game count */
+    .platform-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: #f1f0f8;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    
+    .platform-btn.active .platform-count {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+    }
 
   </style>
 </head>
@@ -637,6 +659,7 @@
               <rect x="14" y="14" width="7" height="7" rx="1"/>
             </svg>
             <span>All</span>
+            <span class="platform-count" id="count-all">0</span>
           </button>
       
           <button type="button" class="platform-btn" data-platform="PC" aria-pressed="false">
@@ -645,6 +668,7 @@
               <path d="M8 21h8M12 17v4"/>
             </svg>
             <span>PC</span>
+            <span class="platform-count" id="count-pc">0</span>
           </button>
       
           <button type="button" class="platform-btn" data-platform="Mobile" aria-pressed="false">
@@ -653,6 +677,7 @@
               <path d="M10 18h4"/>
             </svg>
             <span>Mobile</span>
+            <span class="platform-count" id="count-mobile">0</span>
           </button>
         </div>
       </div>
@@ -682,6 +707,38 @@
   <footer>Made with 💜 and Construct 3</footer>
 
   <script>
+    function updatePlatformCounts(games) {
+      const counts = {
+        all: games.length,
+        pc: 0,
+        mobile: 0
+      };
+
+      games.forEach(game => {
+        const platforms = Array.isArray(game.platform)
+          ? game.platform
+          : game.platform
+            ? [game.platform]
+            : [];
+
+        const normalizedPlatforms = platforms.map(platform =>
+          platform.toLowerCase().trim()
+        );
+
+        if (normalizedPlatforms.includes("pc")) {
+          counts.pc++;
+        }
+
+        if (normalizedPlatforms.includes("mobile")) {
+          counts.mobile++;
+        }
+      });
+
+      document.getElementById("count-all").textContent = counts.all;
+      document.getElementById("count-pc").textContent = counts.pc;
+      document.getElementById("count-mobile").textContent = counts.mobile;
+    }
+    
     async function loadGames() {
       const grid = document.getElementById("game-grid");
       const status = document.getElementById("status");
@@ -697,6 +754,8 @@
         const publishedGames = games.filter(
           game => game.published === true
         );
+        
+        updatePlatformCounts(publishedGames);
 
         projectFilter.replaceChildren(
           new Option("All Project Types", "all")
