@@ -1,7 +1,4 @@
-
 [
-  
-  
   {
     "id": "spin-the-wheel",
     "title": "Spin the Wheel",
@@ -34,7 +31,7 @@
     "featured": true,
     "published": true,
     "gameUrl": "/games/spin-the-wheel/",
-    "controls": ["Mouse", "touch"],
+    "controls": ["Mouse", "Touch"],
     "platform": ["PC", "Mobile"]
   },
   {
@@ -71,7 +68,7 @@
     "featured": true,
     "published": true,
     "gameUrl": "/games/jigsaw-puzzle/",
-    "controls": "Mouse or touch",
+    "controls": ["Mouse", "Touch"],
     "platform": ["PC", "Mobile"]
   },
   {
@@ -85,7 +82,7 @@
     "featured": true,
     "published": true,
     "gameUrl": "/games/cozy-island/",
-    "controls": "Keyboard or touch",
+    "controls": "Keyboard",
     "platform": "Web"
 
   },
@@ -100,7 +97,7 @@
     "featured": false,
     "published": true,
     "gameUrl": "/games/puzzle-pop/",
-    "controls": "Mouse or touch",
+    "controls": "Mouse",
     "platform": "Mobile"
   }
 ]
