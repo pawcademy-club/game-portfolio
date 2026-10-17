@@ -61,7 +61,7 @@
       font-weight: 900;
     }
     
-    @media (max-width: 480px) {
+     (max-width: 480px) {
       .logo {
         gap: 7px;
         font-size: 17px;
@@ -784,14 +784,28 @@
     }
     
 
-  @media (max-width: 600px) {
+    @media (max-width: 600px) {
     .game-filters {
+      display: flex;
+      flex-direction: column;
+      gap: 8px; /* Mengurangi jarak total antar baris/elemen filter */
+      padding: 16px;
+      margin: 16px 0;
+    }
+
+    .filter-row {
       flex-direction: column;
       align-items: stretch;
-      gap: 16px;
-      padding: 18px;
+      gap: 8px; /* Mengurangi jarak antar kolom di dalam baris */
+      margin-bottom: 0;
     }
-  
+
+    .game-filters .filter-group {
+      flex: none;
+      width: 100%;
+      gap: 4px; /* Jarak antara label dan input/select lebih rapat */
+      margin: 0;
+    }
     .filter-group {
       flex: 1 1 auto;
       min-width: 0;
