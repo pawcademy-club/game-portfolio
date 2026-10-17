@@ -259,19 +259,84 @@
 
     .game-card-actions {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 12px;
-      margin-top: 16px;
+      align-items: stretch;
+      gap: 10px;
+      width: 100%;
+      margin-top: 18px;
     }
     
     .game-card-actions .button {
-      flex: 0 0 auto;
-      width: auto;
+      display: inline-flex;
+      flex: 1 1 0;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      min-height: 46px;
       margin: 0;
+      padding: 12px 10px;
+      border: 1px solid transparent;
+      border-radius: 13px;
+      font-size: 14px;
+      font-weight: 800;
+      text-align: center;
+      gap: 7px;
+      white-space: nowrap;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
-
     
+    .game-card-actions .button:first-child {
+      color: #6139c6;
+      background: #f0eafe;
+      border-color: #dfd2ff;
+    }
+    
+    .game-card-actions .button:first-child:hover {
+      background: #e5d9ff;
+      border-color: #cbb8ff;
+      transform: translateY(-2px);
+    }
+    
+    .game-card-actions .button:last-child {
+      color: #ffffff;
+      background: #7655e8;
+      border-color: #7655e8;
+      box-shadow: 0 3px 8px rgba(118, 85, 232, 0.18);
+    }
+    
+    .game-card-actions .button:last-child:hover {
+      background: #6240d2;
+      border-color: #6240d2;
+      box-shadow: 0 5px 12px rgba(118, 85, 232, 0.25);
+      transform: translateY(-2px);
+    }
+    
+    .game-card-actions .button:focus-visible {
+      outline: 3px solid rgba(118, 85, 232, 0.3);
+      outline-offset: 3px;
+    }
+    
+  @media (max-width: 360px) {
+    .game-card-actions {
+      gap: 6px;
+    }
+  
+    .game-card-actions .button {
+      padding: 11px 4px;
+      font-size: 11px;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+  
+    .game-card-actions .button svg {
+      flex-shrink: 0;
+    }
+  }
+
     /* Pawcademy Game Filters */
     .game-filters {
       display: flex;
@@ -1502,8 +1567,15 @@
             const link = document.createElement("a");
             link.className = "button";
             link.href = game.gameUrl;
-            link.textContent = "Play Game";
+            
+            link.innerHTML = `
+              <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path d="M8 5.5v13l10-6.5z"></path>
+              </svg>
+              <span>Play Game</span>
+            `;
             actions.append(link);
+
           }
           card.append(actions);
           
