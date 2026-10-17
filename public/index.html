@@ -755,6 +755,172 @@
       color: #ffffff;
     }
 
+    
+  /* Pawcademy Filter — Visual Refresh */
+  .game-filters {
+    gap: 22px;
+    padding: 26px;
+    background: linear-gradient(135deg, #fffaf0 0%, #f4efff 100%);
+    border: 1px solid #e8ddff;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(76, 53, 114, 0.08);
+  }
+  
+  .filter-row {
+    gap: 18px;
+  }
+  
+  .game-filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .game-filters .filter-group > label {
+    color: #39334c;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+  }
+  
+  .game-filters select,
+  .game-filters input[type="search"] {
+    min-height: 46px;
+    padding: 12px 14px;
+    color: #39334c;
+    background-color: #fff;
+    border: 1px solid #e2d9f5;
+    border-radius: 13px;
+    font: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+  }
+  
+  .game-filters select:focus,
+  .game-filters input[type="search"]:focus {
+    outline: none;
+    border-color: #7655e8;
+    box-shadow: 0 0 0 4px rgba(118, 85, 232, 0.12);
+  }
+  
+  .game-filters .platform-filter,
+  .game-filters .control-filter {
+    gap: 8px;
+  }
+  
+  .game-filters .platform-btn,
+  .game-filters .control-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 40px;
+    padding: 9px 13px;
+    color: #504765;
+    background: #fff;
+    border: 1px solid #e2d9f5;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+  }
+  
+  .game-filters .platform-btn:hover,
+  .game-filters .control-btn:hover {
+    border-color: #7655e8;
+    color: #6748db;
+    transform: translateY(-1px);
+  }
+  
+  .game-filters .platform-btn.active,
+  .game-filters .control-btn.active {
+    color: #fff;
+    background: #6748db;
+    border-color: #6748db;
+    box-shadow: 0 3px 9px rgba(103, 72, 219, 0.2);
+  }
+  
+  .game-filters .platform-count,
+  .game-filters .control-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 5px;
+    color: #6748db;
+    background: #eee8ff;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+  
+  .game-filters .platform-btn.active .platform-count,
+  .game-filters .control-btn.active .control-count {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.22);
+  }
+  
+  .game-filters .reset-filters {
+    min-height: 42px;
+    padding: 11px 16px;
+    color: #6748db;
+    background: #fff;
+    border: 1px solid #dcd0f7;
+    border-radius: 13px;
+    font-weight: 800;
+    transition: all 0.2s ease;
+  }
+  
+  .game-filters .reset-filters:hover {
+    color: #fff;
+    background: #6748db;
+    border-color: #6748db;
+    box-shadow: 0 4px 12px rgba(103, 72, 219, 0.18);
+  }
+  
+  .game-filters .platform-btn:focus-visible,
+  .game-filters .control-btn:focus-visible,
+  .game-filters .reset-filters:focus-visible {
+    outline: 3px solid rgba(118, 85, 232, 0.3);
+    outline-offset: 3px;
+  }
+  
+  @media (max-width: 600px) {
+    .game-filters {
+      gap: 18px;
+      padding: 18px;
+      border-radius: 20px;
+    }
+  
+    .game-filters .filter-row {
+      gap: 16px;
+    }
+  
+    .game-filters .platform-filter,
+    .game-filters .control-filter {
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+  
+    .game-filters .platform-btn,
+    .game-filters .control-btn {
+      min-height: 39px;
+      padding: 8px 11px;
+    }
+  }
+
+
   </style>
 </head>
 
@@ -885,19 +1051,34 @@
   
         <div class="control-filter" role="group" aria-label="Filter games by control">
           <button type="button" class="control-btn active"
-            data-control="all" aria-pressed="true">All</button>
-  
+            <button type="button" class="control-btn active"
+              data-control="all" aria-pressed="true">
+              <span>All</span>
+              <span class="control-count" id="control-count-all">0</span>
+            </button>
           <button type="button" class="control-btn"
-            data-control="Keyboard" aria-pressed="false">Keyboard</button>
-  
+            data-control="Keyboard" aria-pressed="false">
+            <span>Keyboard</span>
+            <span class="control-count" id="control-count-keyboard">0</span>
+          </button>
+          
           <button type="button" class="control-btn"
-            data-control="Mouse" aria-pressed="false">Mouse</button>
-  
+            data-control="Mouse" aria-pressed="false">
+            <span>Mouse</span>
+            <span class="control-count" id="control-count-mouse">0</span>
+          </button>
+          
           <button type="button" class="control-btn"
-            data-control="Touch" aria-pressed="false">Touch</button>
-  
+            data-control="Touch" aria-pressed="false">
+            <span>Touch</span>
+            <span class="control-count" id="control-count-touch">0</span>
+          </button>
+          
           <button type="button" class="control-btn"
-            data-control="Gamepad" aria-pressed="false">Gamepad</button>
+            data-control="Gamepad" aria-pressed="false">
+            <span>Gamepad</span>
+            <span class="control-count" id="control-count-gamepad">0</span>
+          </button>
         </div>
       </div>
   
@@ -956,8 +1137,40 @@
       document.getElementById("count-vending-machine").textContent =
         counts.vendingMachine;
     }
-
     
+    function updateControlCounts(games) {
+      const counts = {
+        all: games.length,
+        keyboard: 0,
+        mouse: 0,
+        touch: 0,
+        gamepad: 0
+      };
+    
+      games.forEach(game => {
+        const controls = Array.isArray(game.controls)
+          ? game.controls
+          : game.controls
+            ? String(game.controls).split(",")
+            : [];
+    
+        const normalizedControls = controls.map(control =>
+          String(control).toLowerCase().trim()
+        );
+    
+        if (normalizedControls.includes("keyboard")) counts.keyboard++;
+        if (normalizedControls.includes("mouse")) counts.mouse++;
+        if (normalizedControls.includes("touch")) counts.touch++;
+        if (normalizedControls.includes("gamepad")) counts.gamepad++;
+      });
+    
+      document.getElementById("control-count-all").textContent = counts.all;
+      document.getElementById("control-count-keyboard").textContent = counts.keyboard;
+      document.getElementById("control-count-mouse").textContent = counts.mouse;
+      document.getElementById("control-count-touch").textContent = counts.touch;
+      document.getElementById("control-count-gamepad").textContent = counts.gamepad;
+    }
+
     async function loadGames() {
       const grid = document.getElementById("game-grid");
       const status = document.getElementById("status");
@@ -975,6 +1188,7 @@
         );
         
         updatePlatformCounts(publishedGames);
+        updateControlCounts(publishedGames);
 
         projectFilter.replaceChildren(
           new Option("All Project Types", "all")
