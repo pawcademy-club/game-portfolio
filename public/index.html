@@ -1023,46 +1023,6 @@
       padding: 8px 11px;
     }
   }
-  /* Fix Jarak Vertikal Mobile antara Search Games & Platform */
-  @media (max-width: 600px) {
-    /* 1. Paksa kontainer utama memakai flex vertikal dengan gap rapat */
-    .game-filters {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 12px !important;
-      padding: 16px !important;
-      margin: 20px 0 !important;
-    }
-
-    /* 2. Hilangkan spasi berlebih pada baris atas & bawah */
-    .game-filters .filter-row,
-    .game-filters .filter-row-top,
-    .game-filters .filter-row-bottom {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 12px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      width: 100% !important;
-    }
-
-    /* 3. Atur setiap grup input (termasuk Search Games & Platform) */
-    .game-filters .filter-group {
-      margin: 0 !important;
-      padding: 0 !important;
-      gap: 4px !important;
-      width: 100% !important;
-    }
-
-    /* 4. Pastikan label dan input Search Games tidak menambah spasi bawah */
-    .game-filters .search-group {
-      margin-bottom: 0 !important;
-    }
-
-    .game-filters .platform-filter-group {
-      margin-top: 0 !important;
-    }
-  }
 
   </style>
 </head>
