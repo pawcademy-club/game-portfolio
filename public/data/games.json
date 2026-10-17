@@ -38,14 +38,14 @@
     "id": "jigsaw-puzzle",
     "title": "Jigsaw Puzzle",
     "genre": "Puzzle",
-    "description": "Piece together adorable cats in this fun and relaxing jigsaw puzzle!",
+    "description": "Piece together adorable kitten in this fun and relaxing game!",
     "cover": "/assets/covers/jigsaw-puzzle.webp",
     "screenshots": [
       "/assets/screenshots/jigsaw-puzzle-1.webp",
       "/assets/screenshots/jigsaw-puzzle-2.webp",
+      "/assets/screenshots/jigsaw-puzzle-6.webp",
       "/assets/screenshots/jigsaw-puzzle-4.webp",
-      "/assets/screenshots/jigsaw-puzzle-5.webp",
-      "/assets/screenshots/jigsaw-puzzle-6.webp"
+      "/assets/screenshots/jigsaw-puzzle-5.webp"
     ],
     "video": "",
     "developer": "Pawcademy",
