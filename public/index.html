@@ -247,6 +247,79 @@
       text-align: center;
       background: white;
     }
+    
+    /* Pawcademy Social Media */
+    .social-section {
+      padding: 60px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #fff9ed, #f3edff);
+    }
+    
+    .social-section h2 {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-size: clamp(28px, 5vw, 38px);
+    }
+    
+    .social-section p {
+      max-width: 520px;
+      margin: 0 auto 28px;
+      color: #666;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 130px;
+      padding: 13px 20px;
+      border: 1px solid #dfd2ff;
+      border-radius: 14px;
+      background: #fff;
+      color: #6748db;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 0.2s ease,
+                  background 0.2s ease,
+                  color 0.2s ease;
+    }
+    
+    .social-link:hover {
+      transform: translateY(-3px);
+      background: #6748db;
+      color: #fff;
+    }
+    
+    .social-link:focus-visible {
+      outline: 3px solid rgba(118, 85, 232, 0.3);
+      outline-offset: 3px;
+    }
+    
+    @media (max-width: 480px) {
+      .social-section {
+        padding: 45px 6%;
+      }
+    
+      .social-links {
+        gap: 10px;
+      }
+    
+      .social-link {
+        flex: 1 1 40%;
+        min-width: 0;
+        padding: 12px 10px;
+      }
+    }
 
     @media (max-width: 750px) {
       .game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1277,6 +1350,64 @@
     <p id="status" class="message" aria-live="polite"></p>
   </main>
 
+  
+  <section class="social-section" id="connect">
+    <h2>💜 Let's Connect!</h2>
+  
+    <p>
+      Enjoy my games? Follow Pawcademy for new games,
+      updates, behind-the-scenes content, and more adventures!
+      Let's stay connected.
+    </p>
+  
+    <div class="social-links">
+      <a
+        class="social-link"
+        href="https://www.facebook.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Facebook ↗
+      </a>
+  
+      <a
+        class="social-link"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram ↗
+      </a>
+  
+      <a
+        class="social-link"
+        href="https://www.tiktok.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        TikTok ↗
+      </a>
+  
+      <a
+        class="social-link"
+        href="https://www.youtube.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        YouTube ↗
+      </a>
+  
+      <a
+        class="social-link"
+        href="https://discord.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Discord ↗
+      </a>
+    </div>
+  </section>
+  
   <footer>Made with 💜 and Construct 3</footer>
 
   <script>
