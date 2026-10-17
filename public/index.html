@@ -1063,6 +1063,60 @@
       margin-top: 0 !important;
     }
   }
+  
+  /* Social Media Footer */
+  .social-footer {
+    padding: 28px 7%;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
+  }
+  
+  .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+  }
+  
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: #929292;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .social-links svg {
+    display: block;
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  .social-links a:hover {
+    color: #555555;
+    transform: translateY(-3px);
+  }
+  
+  .social-links a:focus-visible {
+    outline: 2px solid #929292;
+    outline-offset: 5px;
+    border-radius: 4px;
+  }
+  
+  @media (max-width: 480px) {
+    .social-links {
+      gap: 20px;
+    }
+  }
 
   </style>
 </head>
@@ -1317,7 +1371,84 @@
     <p id="status" class="message" aria-live="polite"></p>
   </main>
 
-  <footer>Made with 💜 and Construct 3</footer>
+  <footer class="social-footer">
+    <div class="social-links">
+  
+      <!-- Instagram -->
+      <a href="https://instagram.com/USERNAME"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="3" width="18" height="18" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.8"
+            fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+  
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/USERNAME"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 21v-8h3l.5-4H14V7
+            c0-1.2.4-2 2-2h1.7V1.5
+            C17 1.3 15.8 1.2 14.5 1.2
+            C11.3 1.2 9 3.1 9 6.7V9H6v4h3v8z"/>
+        </svg>
+      </a>
+  
+      <!-- YouTube -->
+      <a href="https://youtube.com/@USERNAME"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3" y="5" width="18" height="14" rx="4"/>
+          <path d="m10 9 5 3-5 3z"/>
+        </svg>
+      </a>
+  
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@USERNAME"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="TikTok">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M14 3v12.2a4.2 4.2 0 1 1-4-4.2"/>
+          <path d="M14 3c.5 3 2.3 4.8 5 5"/>
+        </svg>
+      </a>
+  
+      <!-- Discord -->
+      <a href="https://discord.com/users/USER_ID"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Discord">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 6.5a16 16 0 0 1 10 0
+            l2 2a18 18 0 0 1 1.5 8
+            13 13 0 0 1-4 2l-1.2-1.8
+            M7 6.5l-2 2a18 18 0 0 0-1.5 8
+            13 13 0 0 0 4 2l1.2-1.8
+            M8 16a15 15 0 0 0 8 0"/>
+          <circle cx="9" cy="12" r="1" fill="currentColor" stroke="none"/>
+          <circle cx="15" cy="12" r="1" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+  
+      <!-- Fiverr -->
+      <a href="https://www.fiverr.com/USERNAME"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Fiverr">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 10h13"/>
+          <path d="M8 20V9a4 4 0 0 1 4-4h3"/>
+          <path d="M12 10v10"/>
+          <circle cx="18" cy="7" r="1.2"
+            fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+  
+    </div>
+  </footer>
 
   <script>
 
