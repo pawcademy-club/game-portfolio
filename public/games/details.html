@@ -47,8 +47,9 @@
 
     .back-link {
       display: inline-block;
+      margin-top: 20px;
       margin-bottom: 24px;
-      color: #4057c8;
+      color: #6748db;
       text-decoration: none;
       font-weight: bold;
     }
@@ -112,7 +113,8 @@
       padding: 12px 20px;
       border: 0;
       border-radius: 10px;
-      background: #4057c8;
+      background: #7655e8;
+      border-color: #7655e8;
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -121,17 +123,20 @@
     }
 
     .button:hover {
-      background: #3045ad;
+      background: #6240d2;
+      border-color: #6240d2;
       transform: translateY(-2px);
     }
 
     .button.secondary {
-      background: #e9ecf5;
-      color: #27324a;
+      background: #f0eafe;
+      color: #6139c6;
     }
 
     .button.secondary:hover {
-      background: #dce1ef;
+      background: #e5d9ff;
+      border-color: #cbb8ff;
+      transform: translateY(-2px);
     }
 
     .metadata {
@@ -1142,11 +1147,11 @@
           hero.append(cover);
         }
 
-        hero.append(createElement(
+        /*hero.append(createElement(
           "span",
           "genre",
           game.genre || "Game"
-        ));
+        ));*/
 
         hero.append(createElement(
           "h1",
