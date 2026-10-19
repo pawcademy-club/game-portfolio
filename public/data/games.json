@@ -16,8 +16,10 @@
     "developmentDate": "2026-06",
     "client": {
       "name": "",
-      "visibility": "confidential"
+      "visibility": "confidential",
+      "country": "United States"
     },
+    "projectDuration": "1 Week"
     "projectType": "internal",
     "role": ["Game Development", "Programming", "Art"],
     "engine": "Construct 3",
@@ -54,8 +56,10 @@
     "developmentDate": "2026-07",
     "client": {
       "name": "",
-      "visibility": "confidential"
+      "visibility": "confidential",
+      "country": "United States"
     },
+    "projectDuration": "10 days"
     "projectType": "internal",
     "role": ["Art, Game Development", "Programming"],
     "engine": "Construct 3",
