@@ -867,9 +867,9 @@
                 if (!month) return year;
         
                 const monthNames = [
-                  "Januari", "Februari", "Maret", "April",
-                  "Mei", "Juni", "Juli", "Agustus",
-                  "September", "Oktober", "November", "Desember"
+                  "January", "February", "March", "April",
+                  "May", "June", "July", "August",
+                  "September", "October", "November", "December"
                 ];
         
                 const monthIndex = Number(month) - 1;
@@ -900,6 +900,14 @@
               : ""
         ],
         [
+          "Client Country",
+          client.country || game.clientCountry || ""
+        ],
+        [
+          "Project Duration",
+          game.projectDuration || ""
+        ],
+        [
           "Role",
           Array.isArray(game.role) ? game.role.join(", ") : ""
         ],
@@ -922,6 +930,8 @@
           "Development Date": "M8 2v4 M16 2v4 M3 10h18 M5 4h14a2 2 0 0 1 2 2v14H3V6a2 2 0 0 1 2-2",
           "Project Type": "M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z",
           "Client / Organization": "M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2 M10 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8 M20 8v6 M23 11h-6",
+          "Client Country": "M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z",
+          "Project Duration": "M12 8v4l3 2 M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20",
           "Role": "m12 3 2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z M19 14l1.5 3.5L24 19l-3.5 1.5L19 24l-1.5-3.5L14 19l3.5-1.5z",
           "Game Engine": "m12 8 4 4-4 4-4-4z M3 12h5 M16 12h5 M12 3v5 M12 16v5",
           "Status": "m5 12 4 4L19 6"
