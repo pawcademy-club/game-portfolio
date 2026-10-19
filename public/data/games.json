@@ -3,6 +3,7 @@
     "id": "spin-the-wheel",
     "title": "Spin the Wheel",
     "genre": "Casual",
+    "orientation": "Landscape",
     "description": "Spin the wheel and discover the fun!",
     "cover": "/assets/covers/spin-the-wheel.webp",
     "screenshots": [
@@ -12,7 +13,6 @@
     ],
     "video": "/assets/videos/spin-the-wheel-gameplay.mp4",
     "developer": "Pawcademy",
-    
     "developmentDate": "2026-06",
     "client": {
       "name": "",
@@ -38,6 +38,7 @@
     "id": "jigsaw-puzzle",
     "title": "Jigsaw Puzzle",
     "genre": "Puzzle",
+    "orientation": "Landscape",
     "description": "Piece together adorable kitten in this fun and relaxing game!",
     "cover": "/assets/covers/jigsaw-puzzle.webp",
     "screenshots": [
