@@ -19,7 +19,7 @@
       "visibility": "confidential",
       "country": "United States"
     },
-    "projectDuration": "1 Week"
+    "projectDuration": "1 Week",
     "projectType": "internal",
     "role": ["Game Development", "Programming", "Art"],
     "engine": "Construct 3",
@@ -59,7 +59,7 @@
       "visibility": "confidential",
       "country": "United States"
     },
-    "projectDuration": "10 days"
+    "projectDuration": "10 days",
     "projectType": "internal",
     "role": ["Art, Game Development", "Programming"],
     "engine": "Construct 3",
