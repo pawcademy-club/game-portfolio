@@ -423,7 +423,13 @@
       overflow: hidden;
       font-size: 50px;
     }
-
+    
+    .game-art img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
     .game-card h3 { 
       margin: 14px 0 6px; 
       font-size: 20px;
@@ -456,7 +462,23 @@
       line-height: 1.3;
       border: 1px solid transparent;
     }
-
+    
+    .game-badge-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      width: 15px;
+      height: 15px;
+      color: inherit;
+    }
+    
+    .game-badge-icon svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    
     .game-badge.genre {
       color: #6D42B5;
       background: #EDE5FF;
