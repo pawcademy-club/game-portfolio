@@ -16,8 +16,8 @@
     "developmentDate": "2026-06",
     "client": {
       "name": "",
-      "visibility": "",
-      "country": ""
+      "visibility": "-",
+      "country": "-"
     },
     "projectDuration": "1 Week",
     "projectType": "internal",
@@ -26,7 +26,6 @@
     "status": "completed",
     
     "features": [
-      "Spin the wheel",
       "Mouse and touch support",
       "Allow to rename prize sections on the wheel",
       "Adjust the number of prize sections displayed on the wheel",
