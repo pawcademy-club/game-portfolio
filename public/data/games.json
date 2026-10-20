@@ -16,8 +16,8 @@
     "developmentDate": "2026-06",
     "client": {
       "name": "",
-      "visibility": "confidential",
-      "country": "United States"
+      "visibility": "",
+      "country": ""
     },
     "projectDuration": "1 Week",
     "projectType": "internal",
@@ -27,8 +27,13 @@
     
     "features": [
       "Spin the wheel",
-      "Simple and fun gameplay",
-      "Mouse and touch support"
+      "Mouse and touch support",
+      "Allow to rename prize sections on the wheel",
+      "Adjust the number of prize sections displayed on the wheel",
+      "Allow to set the probability or winning percentage for each prize",
+      "Use a weighted random selection system to determine the winning prize according to the configured probabilities",
+      "Create a secure admin panel that requires a password to access",
+      "a spin history records previous spins, prizes won, and timestamps"
     ],
     "featured": true,
     "published": true,
