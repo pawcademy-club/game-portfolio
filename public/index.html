@@ -210,6 +210,29 @@
       display: none !important;
     }
 
+  /* Mobile: show only the filter icon */
+  @media (max-width: 600px) {
+    .toggle-filters {
+      gap: 0;
+      width: 40px;
+      min-width: 40px;
+      height: 40px;
+      padding: 0;
+      justify-content: center;
+    }
+  
+    .toggle-filters span {
+      display: none;
+    }
+  
+    .toggle-filters svg {
+      display: block;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+  }
+
     /* Filter System CSS */
     .game-filters {
       display: flex;
@@ -506,6 +529,20 @@
       font-weight: 800;
       line-height: 1.3;
       border: 1px solid transparent;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+
+    .game-badge:hover {
+      filter: brightness(0.92);
+      transform: translateY(-1px);
+    }
+    
+    .game-badge:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
     }
 
     .genre {
@@ -1345,78 +1382,80 @@
           const badgeItems = [
             {
               className: "genre",
-              icon: "gamepad-2",
-              label: game.genre || "Game"
+              label: game.genre || "Game",
+              filterType: "genre",
+              filterValue: game.genre || "all"
             },
-            {
+            ...(
+              Array.isArray(game.platform)
+                ? game.platform
+                : game.platform
+                  ? [game.platform]
+                  : ["Web"]
+            ).map(platform => ({
               className: "platform",
-              icon: "monitor-smartphone",
-              label: Array.isArray(game.platform)
-                ? game.platform.join(" · ")
-                : game.platform || "Web"
-            },
-            {
+              label: platform,
+              filterType: "platform",
+              filterValue: platform
+            })),
+            ...(
+              Array.isArray(game.controls)
+                ? game.controls
+                : game.controls
+                  ? String(game.controls).split(",").map(control => control.trim())
+                  : ["Keyboard"]
+            ).map(control => ({
               className: "control",
-              icon: "mouse-pointer-2",
-              label: Array.isArray(game.controls)
-                ? game.controls.join(" · ")
-                : game.controls || "Keyboard"
-            }
+              label: control,
+              filterType: "control",
+              filterValue: control
+            }))
           ];
-
+          
           badgeItems.forEach(item => {
-            const badge = document.createElement("span");
+            const badge = document.createElement("button");
+            badge.type = "button";
             badge.className = `game-badge ${item.className}`;
+            badge.textContent = item.label;
+            badge.setAttribute("aria-label", `Filter by ${item.label}`);
           
-            /*
-            const icon = document.createElement("span");
-            icon.className = "game-badge-icon";
-            icon.setAttribute("aria-hidden", "true");
-            
-            const iconPaths = {
-              "gamepad-2": `
-                <path d="M6 12h4m-2-2v4"/>
-                <path d="M15 11h.01M18 13h.01"/>
-                <path d="M7.5 7h9a5 5 0 0 1 4.8 6.4l-1 3.2a2.5 2.5 0 0 1-4.1 1.1l-2.1-1.8h-4.2l-2.1 1.8a2.5 2.5 0 0 1-4.1-1.1l-1-3.2A5 5 0 0 1 7.5 7Z"/>
-              `,
-              "monitor-smartphone": `
-                <rect x="2" y="3" width="14" height="12" rx="2"/>
-                <path d="M8 19h2m-1-4v4"/>
-                <rect x="17" y="8" width="5" height="12" rx="1"/>
-                <path d="M19 17h1"/>
-              `,
-              "mouse-pointer-2": `
-                <path d="m5 3 14 11-7 1-3 6L5 3Z"/>
-                <path d="m12 15 4 5"/>
-              `
-            };
-            
-            const svg = document.createElementNS(
-              "http://www.w3.org/2000/svg",
-              "svg"
-            );
-            
-            svg.setAttribute("viewBox", "0 0 24 24");
-            svg.setAttribute("width", "15");
-            svg.setAttribute("height", "15");
-            svg.setAttribute("fill", "none");
-            svg.setAttribute("stroke", "currentColor");
-            svg.setAttribute("stroke-width", "1.8");
-            svg.setAttribute("stroke-linecap", "round");
-            svg.setAttribute("stroke-linejoin", "round");
-            
-            svg.innerHTML = iconPaths[item.icon];
-            icon.append(svg);
-            */
+            badge.addEventListener("click", () => {
+              if (item.filterType === "genre") {
+                genreFilter.value = item.filterValue;
+              }
           
-            const label = document.createElement("span");
-            label.textContent = item.label;
+              if (item.filterType === "platform") {
+                const target = item.filterValue.toLowerCase().trim();
           
-            /* badge.append(icon, label); */
-            badge.append(label);
+                platformButtons.forEach(button => {
+                  const active =
+                    button.dataset.platform.toLowerCase().trim() === target;
+          
+                  button.classList.toggle("active", active);
+                  button.setAttribute("aria-pressed", String(active));
+                });
+              }
+          
+              if (item.filterType === "control") {
+                const target = item.filterValue.toLowerCase().trim();
+          
+                controlButtons.forEach(button => {
+                  const active =
+                    button.dataset.control.toLowerCase().trim() === target;
+          
+                  button.classList.toggle("active", active);
+                  button.setAttribute("aria-pressed", String(active));
+                });
+              }
+          
+              filterGames();
+              document.getElementById("game-filters-panel").hidden = false;
+              document.getElementById("toggle-filters")
+                ?.setAttribute("aria-expanded", "true");
+            });
+            badges.append(label);
             badges.append(badge);
           });
-
 
           const title = document.createElement("h3");
           title.textContent = game.title || "Untitled Game";
@@ -1424,7 +1463,6 @@
           const description = document.createElement("p");
           description.textContent =
             game.description || "Discover this game.";
-
 
           card.append(art, badges, title, description);
 
