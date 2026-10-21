@@ -1644,6 +1644,7 @@ function filterGames() {
       });
 
       filterGames();
+      hideFiltersPanel();
     });
 
     emptyState.append(paw, title, message, button);
@@ -1698,7 +1699,6 @@ function filterGames() {
         button.setAttribute("aria-pressed", "true");
     
         filterGames();
-        hideFiltersPanel();
       });
     });
     
