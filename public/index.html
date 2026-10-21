@@ -1698,6 +1698,7 @@ function filterGames() {
         button.setAttribute("aria-pressed", "true");
     
         filterGames();
+        hideFiltersPanel();
       });
     });
     
@@ -1721,12 +1722,20 @@ function filterGames() {
       });
 
       filterGames();
+      hideFiltersPanel();
     });
 
     loadGames();
 
     const toggleFiltersButton = document.getElementById("toggle-filters");
     const filtersPanel = document.getElementById("game-filters-panel");
+    
+    function hideFiltersPanel() {
+      if (filtersPanel && toggleFiltersButton) {
+        filtersPanel.hidden = true;
+        toggleFiltersButton.setAttribute("aria-expanded", "false");
+      }
+    }
 
     if (toggleFiltersButton && filtersPanel) {
       toggleFiltersButton.addEventListener("click", () => {
