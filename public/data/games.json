@@ -2,9 +2,17 @@
   {
     "id": "spin-the-wheel",
     "title": "Spin the Wheel",
-    "genre": "Casual",
-    "orientation": "Landscape",
     "description": "Spin the wheel and discover the fun!",
+    "genre": "Casual",
+    "platform": [
+      "PC",
+      "Mobile"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Mouse",
+      "Touch"
+    ],
     "cover": "/assets/covers/spin-the-wheel.webp",
     "screenshots": [
       "/assets/screenshots/spin-the-wheel-1.webp",
@@ -12,6 +20,7 @@
       "/assets/screenshots/spin-the-wheel-3.webp"
     ],
     "video": "/assets/videos/spin-the-wheel-gameplay.mp4",
+    "gameUrl": "/games/spin-the-wheel/",
     "developer": "Pawcademy",
     "developmentDate": "2026-06",
     "client": {
@@ -19,12 +28,14 @@
       "visibility": "confidential",
       "country": "-"
     },
-    "projectDuration": "1 Week",
+    "projectDuration": "1 week",
     "projectType": "internal",
-    "role": ["Game Development", "Programming", "Art"],
+    "role": [
+      "Art",
+      "Programming"
+    ],
     "engine": "Construct 3",
     "status": "completed",
-    
     "features": [
       "Mouse and touch support",
       "Allow to rename prize sections on the wheel",
@@ -35,17 +46,22 @@
       "a spin history records previous spins, prizes won, and timestamps"
     ],
     "featured": true,
-    "published": true,
-    "gameUrl": "/games/spin-the-wheel/",
-    "controls": ["Mouse", "Touch"],
-    "platform": ["PC", "Mobile"]
+    "published": true
   },
   {
     "id": "jigsaw-puzzle",
     "title": "Jigsaw Puzzle",
-    "genre": "Puzzle",
-    "orientation": "Landscape",
     "description": "Piece together adorable kitten in this fun and relaxing game!",
+    "genre": "Puzzle",
+    "platform": [
+      "PC",
+      "Mobile"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Mouse",
+      "Touch"
+    ],
     "cover": "/assets/covers/jigsaw-puzzle.webp",
     "screenshots": [
       "/assets/screenshots/jigsaw-puzzle-1.webp",
@@ -55,58 +71,1905 @@
       "/assets/screenshots/jigsaw-puzzle-5.webp"
     ],
     "video": "",
+    "gameUrl": "/games/jigsaw-puzzle/",
     "developer": "Pawcademy",
-    
     "developmentDate": "2026-07",
     "client": {
       "name": "",
       "visibility": "confidential",
-      "country": "United States"
+      "country": "-"
     },
     "projectDuration": "10 days",
     "projectType": "internal",
-    "role": ["Art, Game Development", "Programming"],
+    "role": [
+      "Art",
+      "Programming"
+    ],
     "engine": "Construct 3",
     "status": "completed",
-    
-    "features": [
-      "Set prize and password",
-      "Simple and fun gameplay",
-      "Mouse and touch support"
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "cisco-redeem",
+    "title": "Cisco Redeem Your Gift",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
     ],
-    "featured": true,
-    "published": true,
-    "gameUrl": "/games/jigsaw-puzzle/",
-    "controls": ["Mouse", "Touch"],
-    "platform": ["PC", "Mobile"]
-  },
-  {
-    "id": "cozy-island",
-    "title": "Cozy Island",
-    "genre": "Adventure",
-    "description": "Explore a peaceful island full of surprises.",
-    "cover": "/assets/covers/cozy-island.webp",
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/cisco-redeem.webp",
     "screenshots": [],
     "video": "",
+    "gameUrl": "/games/cisco-redeem/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
     "featured": true,
-    "published": true,
-    "gameUrl": "/games/cozy-island/",
-    "controls": "Keyboard",
-    "platform": "Web"
-
+    "published": true
   },
   {
-    "id": "puzzle-pop",
-    "title": "Puzzle Pop",
-    "genre": "Puzzle",
-    "description": "A playful puzzle game for curious minds.",
-    "cover": "/assets/covers/puzzle-pop.webp",
+    "id": "spin-wheel",
+    "title": "Spin the Wheel and Win!",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/spin-wheel.webp",
     "screenshots": [],
     "video": "",
-    "featured": false,
-    "published": true,
-    "gameUrl": "/games/puzzle-pop/",
-    "controls": "Mouse",
-    "platform": "Mobile"
+    "gameUrl": "/games/spin-wheel/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "peninsula",
+    "title": "Peninsula",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/peninsula.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/peninsula/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "spot-the-deepfake",
+    "title": "Spot the Deepfake",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/spot-the-deepfake.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/spot-the-deepfake/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "firewall-defender",
+    "title": "Firewall Defender",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/firewall-defender.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/firewall-defender/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "break",
+    "title": "Break",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "PC"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Keyboard"
+    ],
+    "cover": "/assets/covers/break.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/break/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-09",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "treasure-run",
+    "title": "Mochiak and Ahwoo's Treasure Run",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/treasure-run.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/treasure-run/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-09",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "bytedance",
+    "title": "Bytedance",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/bytedance.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/bytedance/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-09",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "fuel-the-limit",
+    "title": "Fuel the Limit",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/fuel-the-limit.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/fuel-the-limit/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-06",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "the-great-lift-escape",
+    "title": "The Great Lift Escape",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/the-great-lift-escape.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/the-great-lift-escape/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-06",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "memory-card",
+    "title": "Memory Card",
+    "description": "",
+    "genre": "Memory",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/memory-card.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/memory-card/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-06",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "password-challenge",
+    "title": "Password Challenge",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/password-challenge.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/password-challenge/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "somerset",
+    "title": "313@somerset",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/somerset.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/somerset/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "retro-reel",
+    "title": "Retro Reel",
+    "description": "",
+    "genre": "Match 3",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/retro-reel.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/retro-reel/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "kff-spin-wheel",
+    "title": "KFF Spin the Wheel",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/kff-spin-wheel.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/kff-spin-wheel/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 4",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "ready-set-pack",
+    "title": "Ready Set Pack",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/ready-set-pack.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/ready-set-pack/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-04",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "gems-grabber",
+    "title": "Gems Grabber",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/gems-grabber.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/gems-grabber/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-04",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "emotion-vault",
+    "title": "Emotion Vault",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/emotion-vault.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/emotion-vault/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-03",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "roll-away",
+    "title": "Glow is Just One Roll Away",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/roll-away.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/roll-away/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-03",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "rescue-dry-falky-skin",
+    "title": "Rescue Dry Flaky Skin",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/rescue-dry-falky-skin.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/rescue-dry-falky-skin/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-03",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "play-n-win-prizes",
+    "title": "Play & Win Prizes!",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/play-n-win-prizes.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/play-n-win-prizes/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-02",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "roaries-roar-gauge",
+    "title": "Roaries Roar Gauge Challenge",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/roaries-roar-gauge.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/roaries-roar-gauge/",
+    "developer": "Pawcademy",
+    "developmentDate": "2026-01",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "prosperity-bonsai-shake",
+    "title": "Prosperity Bonsai Shake",
+    "description": "",
+    "genre": "Idle",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/prosperity-bonsai-shake.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/prosperity-bonsai-shake/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-12",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "memory-n-spin",
+    "title": "Memory and Spin",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/memory-n-spin.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/memory-n-spin/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-11",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "uob-fx",
+    "title": "UOB FX",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/uob-fx.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/uob-fx/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "match-card",
+    "title": "Match Card",
+    "description": "",
+    "genre": "Memory",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/match-card.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/match-card/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "gnomes-of-loves",
+    "title": "Gnomes of Loves",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/gnomes-of-loves.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/gnomes-of-loves/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "sort-tube",
+    "title": "Sort tube",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/sort-tube.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/sort-tube/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "spongebob",
+    "title": "Spongebob",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/spongebob.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/spongebob/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "jolly-rush",
+    "title": "Jolly Rush",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/jolly-rush.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/jolly-rush/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-10",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "drrive-racing-singapore",
+    "title": "Drive Racing Singapore",
+    "description": "",
+    "genre": "Racing",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/drrive-racing-singapore.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/drrive-racing-singapore/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-09",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "uob-jb",
+    "title": "UOB JB",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/uob-jb.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/uob-jb/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-09",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "gnomes-of-christmas-joy",
+    "title": "Gnomes of Christmas Joy",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/gnomes-of-christmas-joy.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/gnomes-of-christmas-joy/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-09",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "test-your-cyber-wits",
+    "title": "Test Your Cyber Wits!",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Landscape",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/test-your-cyber-wits.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/test-your-cyber-wits/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-08",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "grift-gobbler-quiz",
+    "title": "Grift Gobbler Quiz",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/grift-gobbler-quiz.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/grift-gobbler-quiz/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-08",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "grift-gobbler-game",
+    "title": "Grift Gobbler Game",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/grift-gobbler-game.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/grift-gobbler-game/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-08",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "truth-quest",
+    "title": "Truth Quest",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/truth-quest.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/truth-quest/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-08",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "shaping-the-future",
+    "title": "Shaping the Future",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/shaping-the-future.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/shaping-the-future/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-07",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "drink-your-way",
+    "title": "Drink Your Way",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/drink-your-way.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/drink-your-way/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-06",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "ambulance-rush",
+    "title": "Ambulance Rush",
+    "description": "",
+    "genre": "Racing",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/ambulance-rush.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/ambulance-rush/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-06",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "public-sector",
+    "title": "What's Your Public Sector Transformation Potential",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/public-sector.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/public-sector/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "survey-n-win",
+    "title": "Survey and Win",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/survey-n-win.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/survey-n-win/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "micron-sort-tube",
+    "title": "Micron Sort Tube",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/micron-sort-tube.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/micron-sort-tube/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "the-face-shop",
+    "title": "The Face Shop Clean Beauty",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/the-face-shop.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/the-face-shop/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-05",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "alibaba",
+    "title": "Alibaba Cloud Gitex Asia 2025",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/alibaba.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/alibaba/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-04",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "factory-frenzy",
+    "title": "Factory Frenzy",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/factory-frenzy.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/factory-frenzy/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-04",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "applied-materials",
+    "title": "Applied Materials",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/applied-materials.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/applied-materials/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-04",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "where-suncare-meets-skincare",
+    "title": "Where Suncare Meets Skincare",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/where-suncare-meets-skincare.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/where-suncare-meets-skincare/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-02",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "axis-y",
+    "title": "Axis Y",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/axis-y.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/axis-y/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-02",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "stamp-rally",
+    "title": "Stamp Rally",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "Mobile"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/stamp-rally.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/stamp-rally/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-02",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "lucky-spin",
+    "title": "Lucky Spin",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/lucky-spin.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/lucky-spin/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-02",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "dont-get-scammed-survey",
+    "title": "Don't Get Scammed! Survey",
+    "description": "",
+    "genre": "Trivia",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/dont-get-scammed-survey.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/dont-get-scammed-survey/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-01",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "dont-get-scammed-game",
+    "title": "Don't Get Scammed! Game",
+    "description": "",
+    "genre": "Match 3",
+    "platform": [
+      "Vending Machine"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/dont-get-scammed-game.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/dont-get-scammed-game/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-01",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "desire-devide",
+    "title": "Desire Devide",
+    "description": "",
+    "genre": "Match 3",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Both",
+    "controls": [
+      "Touch"
+    ],
+    "cover": "/assets/covers/desire-devide.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/desire-devide/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-01",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
+  },
+  {
+    "id": "coli-collide",
+    "title": "Coli Collide",
+    "description": "",
+    "genre": "Casual",
+    "platform": [
+      "KiosK"
+    ],
+    "orientation": "Portrait",
+    "controls": [
+      "Keyboard",
+      "Touch"
+    ],
+    "cover": "/assets/covers/coli-collide.webp",
+    "screenshots": [],
+    "video": "",
+    "gameUrl": "/games/coli-collide/",
+    "developer": "Pawcademy",
+    "developmentDate": "2025-01",
+    "client": {
+      "name": "Innovasion",
+      "visibility": "confidential",
+      "country": "Singapore"
+    },
+    "projectDuration": "< 3 days",
+    "projectType": "client",
+    "role": [
+      "Programming"
+    ],
+    "engine": "Construct 3",
+    "status": "completed",
+    "features": [],
+    "featured": true,
+    "published": true
   }
 ]
