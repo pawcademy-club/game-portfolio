@@ -1712,12 +1712,20 @@ document.getElementById("prev-page")?.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     filterGames();
+
+    document.querySelector("#games")?.scrollIntoView({
+      behavior: "smooth"
+    });
   }
 });
 
 document.getElementById("next-page")?.addEventListener("click", () => {
   currentPage++;
   filterGames();
+
+  document.querySelector("#games")?.scrollIntoView({
+    behavior: "smooth"
+  });
 });
     
 function filterGames() {
