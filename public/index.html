@@ -925,23 +925,43 @@
       color: inherit;
     }
     
-    @media (max-width: 480px) {
-      .pagination {
-        gap: 5px;
-      }
-    
-      .pagination button {
-        min-width: 34px;
-        min-height: 36px;
-        padding: 6px 9px;
-        font-size: 14px;
-      }
-    
-      .page-numbers {
-        gap: 4px;
-      }
+  @media (max-width: 480px) {
+    .pagination {
+      flex-wrap: nowrap;
+      gap: 4px;
+      width: 100%;
+      padding: 0 8px;
+      box-sizing: border-box;
     }
-    
+  
+    .pagination button {
+      min-width: 0;
+      min-height: 36px;
+      padding: 6px 8px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  
+    .pagination > button {
+      flex-shrink: 0;
+    }
+  
+    .page-numbers {
+      flex-wrap: nowrap;
+      gap: 3px;
+      min-width: 0;
+    }
+  
+    .page-numbers .page-number {
+      min-width: 30px;
+      padding: 5px;
+    }
+  
+    .page-ellipsis {
+      padding: 0 1px;
+    }
+  }
+
   </style>
 </head>
 
