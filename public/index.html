@@ -28,7 +28,7 @@
     }
 
     /* Navigation */
-    nav {
+    nav:not(#pagination) {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -896,13 +896,13 @@
     }
     
     .pagination button:hover:not(:disabled) {
-      border-color: #2563eb;
-      color: #2563eb;
+      border-color: #6748db;
+      color: #6748db;
     }
     
     .pagination button.page-number.active {
-      background: #2563eb;
-      border-color: #2563eb;
+      background: #6748db;
+      border-color: #6748db;
       color: #ffffff;
       font-weight: 700;
     }
@@ -1197,7 +1197,7 @@
     hidden
   >
     <button type="button" id="prev-page" disabled>
-      Previous
+      Prev
     </button>
   
     <div id="page-numbers" class="page-numbers"></div>
