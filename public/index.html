@@ -1114,6 +1114,17 @@
               <span>Vending Machine</span>
               <span class="platform-count" id="count-vending-machine">0</span>
             </button>
+      
+            <button type="button" class="platform-btn" data-platform="KiosK">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="2" width="16" height="20" rx="2"/>
+                <rect x="7" y="5" width="10" height="7" rx="1"/>
+                <path d="M8 15h8M8 18h5"/>
+              </svg>
+              <span>KiosK</span>
+              <span class="platform-count" id="count-kiosk">0</span>
+            </button>
+
           </div>
         </div>
 
@@ -1321,7 +1332,8 @@
         all: games.length,
         pc: 0,
         mobile: 0,
-        vendingMachine: 0
+        vendingMachine: 0,
+        kiosk: 0
       };
     
       games.forEach(game => {
@@ -1346,13 +1358,18 @@
         if (normalizedPlatforms.includes("vending machine")) {
           counts.vendingMachine++;
         }
+        
+        if (normalizedPlatforms.includes("kiosk")) {
+        counts.kiosk++;
+        }
+        
       });
     
       document.getElementById("count-all").textContent = counts.all;
       document.getElementById("count-pc").textContent = counts.pc;
       document.getElementById("count-mobile").textContent = counts.mobile;
-      document.getElementById("count-vending-machine").textContent =
-        counts.vendingMachine;
+      document.getElementById("count-vending-machine").textContent = counts.vendingMachine;
+      document.getElementById("count-kiosk").textContent = counts.kiosk;
     }
     
     function updateControlCounts(games) {
