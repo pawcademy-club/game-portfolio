@@ -1525,7 +1525,7 @@
 
           if (game.cover) {
             const img = document.createElement("img");
-            img.src = game.cover;
+            img.dataset.src = game.cover;
             img.alt = game.title || "Game cover";
             img.loading = "lazy";
             img.decoding = "async";
@@ -1924,6 +1924,13 @@ function filterGames() {
 
   pageCards.forEach(card => {
     card.hidden = false;
+  
+    const img = card.querySelector(".game-art img");
+  
+    if (img && img.dataset.src) {
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+    }
   });
 
   // Update status
