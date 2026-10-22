@@ -758,7 +758,7 @@
   }
   
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: ;
   }
 
   .social-footer {
@@ -1447,7 +1447,7 @@
           button.type = "button";
           button.addEventListener("click", () => {
             document.querySelector(".hero")?.scrollIntoView({
-              behavior: "smooth"
+              behavior: ""
             });
           });
         
@@ -1661,7 +1661,7 @@ function renderPageNumbers(totalPages) {
       currentPage = page;
       filterGames();
       
-      document.querySelector(".hero")?.scrollIntoView({
+      document.querySelector("#games")?.scrollIntoView({
         behavior: "smooth"
       });
     });
