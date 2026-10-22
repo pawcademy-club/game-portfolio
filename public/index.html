@@ -1660,6 +1660,10 @@ function renderPageNumbers(totalPages) {
     button.addEventListener("click", () => {
       currentPage = page;
       filterGames();
+      
+      document.querySelector(".hero")?.scrollIntoView({
+        behavior: "smooth"
+      });
     });
 
     pageNumbers.appendChild(button);
