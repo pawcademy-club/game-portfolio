@@ -500,6 +500,7 @@
     }
     
     .game-art img {
+      display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -1527,6 +1528,7 @@
             img.src = game.cover;
             img.alt = game.title || "Game cover";
             img.loading = "lazy";
+            img.decoding = "async";
 
             img.onerror = () => {
               img.remove();
