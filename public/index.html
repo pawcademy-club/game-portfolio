@@ -866,7 +866,82 @@
       text-align: center;
     }
   }
-  
+
+    /* Game pagination */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 32px 0;
+    }
+    
+    .pagination[hidden] {
+      display: none;
+    }
+    
+    .pagination button {
+      min-width: 40px;
+      min-height: 40px;
+      padding: 8px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease,
+        border-color 0.2s ease;
+    }
+    
+    .pagination button:hover:not(:disabled) {
+      border-color: #2563eb;
+      color: #2563eb;
+    }
+    
+    .pagination button.page-number.active {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+      font-weight: 700;
+    }
+    
+    .pagination button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    
+    .page-numbers {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    
+    .page-ellipsis {
+      padding: 0 4px;
+      color: inherit;
+    }
+    
+    @media (max-width: 480px) {
+      .pagination {
+        gap: 5px;
+      }
+    
+      .pagination button {
+        min-width: 34px;
+        min-height: 36px;
+        padding: 6px 9px;
+        font-size: 14px;
+      }
+    
+      .page-numbers {
+        gap: 4px;
+      }
+    }
+    
   </style>
 </head>
 
@@ -1089,10 +1164,29 @@
     </div>
 
     <!-- Games Grid Container -->
-    <div id="game-grid" class="game-grid">
-        <p class="message">Loading games...</p>
-    </div>
-    <p id="status" class="message" aria-live="polite"></p>
+  <div id="game-grid" class="game-grid">
+      <p class="message">Loading games...</p>
+  </div>
+  
+  <p id="status" class="message" aria-live="polite"></p>
+  
+  <nav
+    id="pagination"
+    class="pagination"
+    aria-label="Game collection pages"
+    hidden
+  >
+    <button type="button" id="prev-page" disabled>
+      Previous
+    </button>
+  
+    <div id="page-numbers" class="page-numbers"></div>
+    
+    <button type="button" id="next-page">
+      Next
+    </button>
+  </nav>
+
   </main>
 
   <footer class="social-footer" id="contact">
@@ -1542,23 +1636,109 @@
         console.error(error);
       }
     }
+
+const GAMES_PER_PAGE = 12;
+let currentPage = 1;
+
+function renderPageNumbers(totalPages) {
+  const pageNumbers = document.getElementById("page-numbers");
+  if (!pageNumbers) return;
+
+  pageNumbers.replaceChildren();
+
+  const addPageButton = (page) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = page;
+    button.className = "page-number";
+
+    if (page === currentPage) {
+      button.classList.add("active");
+      button.setAttribute("aria-current", "page");
+    }
+
+    button.addEventListener("click", () => {
+      currentPage = page;
+      filterGames();
+    });
+
+    pageNumbers.appendChild(button);
+  };
+
+  const addEllipsis = () => {
+    const span = document.createElement("span");
+    span.textContent = "…";
+    span.className = "page-ellipsis";
+    span.setAttribute("aria-hidden", "true");
+    pageNumbers.appendChild(span);
+  };
+
+  // Show all pages when there are five or fewer
+  if (totalPages <= 5) {
+    for (let page = 1; page <= totalPages; page++) {
+      addPageButton(page);
+    }
+    return;
+  }
+
+  // Always show the first page
+  addPageButton(1);
+
+  if (currentPage > 3) {
+    addEllipsis();
+  }
+
+  // Show nearby pages
+  const start = Math.max(2, currentPage - 1);
+  const end = Math.min(totalPages - 1, currentPage + 1);
+
+  for (let page = start; page <= end; page++) {
+    addPageButton(page);
+  }
+
+  if (currentPage < totalPages - 2) {
+    addEllipsis();
+  }
+
+  // Always show the last page
+  addPageButton(totalPages);
+}
+
+document.getElementById("prev-page")?.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    filterGames();
+  }
+});
+
+document.getElementById("next-page")?.addEventListener("click", () => {
+  currentPage++;
+  filterGames();
+});
     
 function filterGames() {
   const projectType = projectFilter.value;
   const genre = genreFilter.value;
   const sortOrder = sortGames.value;
+
   const selectedPlatform =
-  document.querySelector(".platform-btn.active")?.dataset.platform || "all";
+    document.querySelector(".platform-btn.active")?.dataset.platform || "all";
+
   const selectedControl =
-  document.querySelector(".control-btn.active")?.dataset.control || "all";
+    document.querySelector(".control-btn.active")?.dataset.control || "all";
+
   const status = document.getElementById("status");
   const searchTerm = gameSearch.value.trim().toLowerCase();
-
   const grid = document.getElementById("game-grid");
+  const pagination = document.getElementById("pagination");
+  const prevButton = document.getElementById("prev-page");
+  const nextButton = document.getElementById("next-page");
+  const pageInfo = document.getElementById("page-info");
+
   const cards = [...grid.querySelectorAll(".game-card")];
 
   // Filter games
-  cards.forEach(card => {
+  const filteredCards = cards.filter(card => {
     const matchesProject =
       projectType === "all" ||
       card.dataset.projectType === projectType;
@@ -1566,7 +1746,7 @@ function filterGames() {
     const matchesGenre =
       genre === "all" ||
       card.dataset.genre === genre;
-    
+
     const cardPlatforms = JSON.parse(card.dataset.platform || "[]");
 
     const matchesPlatform =
@@ -1574,7 +1754,7 @@ function filterGames() {
       cardPlatforms.some(
         platform => platform.toLowerCase() === selectedPlatform.toLowerCase()
       );
-    
+
     const cardControls = JSON.parse(card.dataset.controls || "[]");
 
     const matchesControl =
@@ -1584,10 +1764,9 @@ function filterGames() {
       );
 
     const title = card.querySelector("h3").textContent.trim();
-    const matchesSearch =
-      title.toLowerCase().includes(searchTerm);
+    const matchesSearch = title.toLowerCase().includes(searchTerm);
 
-    card.hidden = !(
+    return (
       matchesProject &&
       matchesGenre &&
       matchesSearch &&
@@ -1595,6 +1774,122 @@ function filterGames() {
       matchesControl
     );
   });
+
+  // Sort matching games
+  filteredCards.sort((a, b) => {
+    const titleA = a.querySelector("h3").textContent.trim();
+    const titleB = b.querySelector("h3").textContent.trim();
+
+    if (sortOrder === "az") return titleA.localeCompare(titleB);
+    if (sortOrder === "za") return titleB.localeCompare(titleA);
+
+    const dateA = Date.parse(a.dataset.date || "");
+    const dateB = Date.parse(b.dataset.date || "");
+
+    const timeA = Number.isNaN(dateA) ? 0 : dateA;
+    const timeB = Number.isNaN(dateB) ? 0 : dateB;
+
+    if (sortOrder === "oldest") return timeA - timeB;
+    return timeB - timeA;
+  });
+
+  // Remove previous empty state
+  const existingEmptyState = grid.querySelector(".empty-state");
+  if (existingEmptyState) existingEmptyState.remove();
+
+  // Show empty state when no games match
+  if (filteredCards.length === 0) {
+    cards.forEach(card => {
+      card.hidden = true;
+    });
+
+    const emptyState = document.createElement("div");
+    emptyState.className = "empty-state";
+
+    const paw = document.createElement("div");
+    paw.className = "empty-state-paw";
+    paw.setAttribute("aria-hidden", "true");
+    paw.textContent = "🐾";
+
+    const title = document.createElement("h3");
+    title.textContent = "No games found!";
+
+    const message = document.createElement("p");
+    message.textContent =
+      "Oops! We couldn't find a game that matches your search or filters. Try another keyword or clear your filters to explore all our games.";
+
+    const button = document.createElement("button");
+    button.className = "empty-state-button";
+    button.type = "button";
+    button.textContent = "Clear Search & Filters";
+
+    button.addEventListener("click", () => {
+      projectFilter.value = "all";
+      genreFilter.value = "all";
+      gameSearch.value = "";
+
+      platformButtons.forEach(item => {
+        const active = item.dataset.platform === "all";
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+
+      controlButtons.forEach(item => {
+        const active = item.dataset.control === "all";
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+
+      currentPage = 1;
+      filterGames();
+      hideFiltersPanel();
+    });
+
+    emptyState.append(paw, title, message, button);
+    grid.appendChild(emptyState);
+
+    if (pagination) pagination.hidden = true;
+    status.textContent = "No matching games.";
+    return;
+  }
+
+  // Keep current page within valid range
+  const totalPages = Math.ceil(filteredCards.length / GAMES_PER_PAGE);
+  currentPage = Math.min(Math.max(currentPage, 1), totalPages);
+
+  // Hide all cards first
+  cards.forEach(card => {
+    card.hidden = true;
+  });
+
+  // Reorder cards and show only the current page
+  filteredCards.forEach(card => grid.appendChild(card));
+
+  const startIndex = (currentPage - 1) * GAMES_PER_PAGE;
+  const pageCards = filteredCards.slice(
+    startIndex,
+    startIndex + GAMES_PER_PAGE
+  );
+
+  pageCards.forEach(card => {
+    card.hidden = false;
+  });
+
+  // Update status
+  status.textContent =
+    filteredCards.length + " games in the collection.";
+
+  // Update pagination controls
+  const pageNumbers = document.getElementById("page-numbers");
+  
+  if (pagination && prevButton && nextButton) {
+    pagination.hidden = totalPages <= 1;
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+  
+    renderPageNumbers(totalPages);
+  }
+}
 
   // Sort games
   const sortedCards = [...cards].sort((a, b) => {
