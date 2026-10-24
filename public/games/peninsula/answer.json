@@ -1,0 +1,97 @@
+{
+    "c2array": true,
+    "size": [
+        3,
+        9,
+        1
+    ],
+    "data": [
+        [
+            [
+                "How long will bunker prices remain inflated after an orderly re-opening of the Hormuz Strait?"
+            ],
+            [
+                "0-3 months"
+            ],
+            [
+                "3-6 month"
+            ],
+            [
+                "6-12 months"
+            ],
+            [
+                "1-2 years"
+            ],
+            [
+                "2+ years"
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ]
+        ],
+        [
+            [
+                "Which fuel pathway do you believe will play the biggest role in helping the shipping industry meet future emissions regulations?"
+            ],
+            [
+                "A combination of multiple fuel types"
+            ],
+            [
+                "Ammonia"
+            ],
+            [
+                "Biofuels"
+            ],
+            [
+                "Conventional fuels with carbon reduction measures"
+            ],
+            [
+                "LNG / Bio-LNG"
+            ],
+            [
+                "Other"
+            ],
+            [
+                ""
+            ],
+            [
+                ""
+            ]
+        ],
+        [
+            [
+                "What is your primary area of interest?"
+            ],
+            [
+                "Biofuels and alternative fuels"
+            ],
+            [
+                "Competitive pricing"
+            ],
+            [
+                "Fuel quality and assurance"
+            ],
+            [
+                "Physical fuel supply"
+            ],
+            [
+                "Risk management and hedging"
+            ],
+            [
+                "Supply chain and logistics"
+            ],
+            [
+                "Sustainability and compliance"
+            ],
+            [
+                "Other"
+            ]
+        ]
+    ]
+}
