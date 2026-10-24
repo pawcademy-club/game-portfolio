@@ -487,8 +487,8 @@
     "published": true
   },
   {
-    "id": "memory-card",
-    "title": "Memory Card",
+    "id": "memory-game",
+    "title": "Memory Game",
     "description": "",
     "genre": "Memory",
     "platform": [
@@ -498,14 +498,14 @@
     "controls": [
       "Touch"
     ],
-    "cover": "/assets/covers/memory-card.webp",
+    "cover": "/assets/covers/memory-game.webp",
     "screenshots": [
-      "/assets/covers/memory-card-1.webp",
-      "/assets/covers/memory-card-2.webp",
-      "/assets/covers/memory-card-3.webp"
+      "/assets/covers/memory-game-1.webp",
+      "/assets/covers/memory-game-2.webp",
+      "/assets/covers/memory-game-3.webp"
     ],
     "video": "",
-    "gameUrl": "/games/memory-card/",
+    "gameUrl": "/games/memory-game/",
     "developer": "Pawcademy",
     "developmentDate": "2026-06",
     "client": {
