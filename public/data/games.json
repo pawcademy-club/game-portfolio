@@ -105,9 +105,9 @@
     ],
     "cover": "/assets/covers/cisco-redeem.webp",
     "screenshots": [
-      "/assets/covers/cisco-redeem-1.webp",
-      "/assets/covers/cisco-redeem-2.webp",
-      "/assets/covers/cisco-redeem-3.webp"
+      "/assets/screenshots/cisco-redeem-1.webp",
+      "/assets/screenshots/cisco-redeem-2.webp",
+      "/assets/screenshots/cisco-redeem-3.webp"
     ],
     "video": "",
     "gameUrl": "/games/cisco-redeem/",
@@ -143,10 +143,10 @@
     ],
     "cover": "/assets/covers/spin-wheel.webp",
     "screenshots": [
-      "/assets/covers/spin-wheel-1.webp",
-      "/assets/covers/spin-wheel-2.webp",
-      "/assets/covers/spin-wheel-3.webp",
-      "/assets/covers/spin-wheel-4.webp"
+      "/assets/screenshots/spin-wheel-1.webp",
+      "/assets/screenshots/spin-wheel-2.webp",
+      "/assets/screenshots/spin-wheel-3.webp",
+      "/assets/screenshots/spin-wheel-4.webp"
     ],
     "video": "",
     "gameUrl": "/games/spin-wheel/",
@@ -183,9 +183,9 @@
     ],
     "cover": "/assets/covers/peninsula.webp",
     "screenshots": [
-      "/assets/covers/peninsula-1.webp",
-      "/assets/covers/peninsula-2.webp",
-      "/assets/covers/peninsula-3.webp"
+      "/assets/screenshots/peninsula-1.webp",
+      "/assets/screenshots/peninsula-2.webp",
+      "/assets/screenshots/peninsula-3.webp"
     ],
     "video": "",
     "gameUrl": "/games/peninsula/",
@@ -221,11 +221,11 @@
     ],
     "cover": "/assets/covers/spot-the-deepfake.webp",
     "screenshots": [
-      "/assets/covers/spot-the-deepfake-1.webp",
-      "/assets/covers/spot-the-deepfake-2.webp",
-      "/assets/covers/spot-the-deepfake-3.webp",
-      "/assets/covers/spot-the-deepfake-4.webp",
-      "/assets/covers/spot-the-deepfake-5.webp"
+      "/assets/screenshots/spot-the-deepfake-1.webp",
+      "/assets/screenshots/spot-the-deepfake-2.webp",
+      "/assets/screenshots/spot-the-deepfake-3.webp",
+      "/assets/screenshots/spot-the-deepfake-4.webp",
+      "/assets/screenshots/spot-the-deepfake-5.webp"
     ],
     "video": "",
     "gameUrl": "/games/spot-the-deepfake/",
@@ -261,11 +261,11 @@
     ],
     "cover": "/assets/covers/firewall-defender.webp",
     "screenshots": [
-      "/assets/covers/firewall-defender-1.webp",
-      "/assets/covers/firewall-defender-2.webp",
-      "/assets/covers/firewall-defender-3.webp",
-      "/assets/covers/firewall-defender-4.webp",
-      "/assets/covers/firewall-defender-5.webp"
+      "/assets/screenshots/firewall-defender-1.webp",
+      "/assets/screenshots/firewall-defender-2.webp",
+      "/assets/screenshots/firewall-defender-3.webp",
+      "/assets/screenshots/firewall-defender-4.webp",
+      "/assets/screenshots/firewall-defender-5.webp"
     ],
     "video": "",
     "gameUrl": "/games/firewall-defender/",
@@ -301,9 +301,11 @@
     ],
     "cover": "/assets/covers/break.webp",
     "screenshots": [
-      "/assets/covers/break-1.webp",
-      "/assets/covers/break-2.webp",
-      "/assets/covers/break-3.webp"
+      "/assets/screenshots/break-1.webp",
+      "/assets/screenshots/break-2.webp",
+      "/assets/screenshots/break-3.webp",
+      "/assets/screenshots/break-4.webp",
+      "/assets/screenshots/break-5.webp"
     ],
     "video": "",
     "gameUrl": "/games/break/",
@@ -339,14 +341,14 @@
     ],
     "cover": "/assets/covers/treasure-run.webp",
     "screenshots": [
-      "/assets/covers/treasure-run-1.webp",
-      "/assets/covers/treasure-run-2.webp",
-      "/assets/covers/treasure-run-3.webp",
-      "/assets/covers/treasure-run-4.webp",
-      "/assets/covers/treasure-run-5.webp",
-      "/assets/covers/treasure-run-6.webp",
-      "/assets/covers/treasure-run-7.webp",
-      "/assets/covers/treasure-run-8.webp"
+      "/assets/screenshots/treasure-run-1.webp",
+      "/assets/screenshots/treasure-run-2.webp",
+      "/assets/screenshots/treasure-run-3.webp",
+      "/assets/screenshots/treasure-run-4.webp",
+      "/assets/screenshots/treasure-run-5.webp",
+      "/assets/screenshots/treasure-run-6.webp",
+      "/assets/screenshots/treasure-run-7.webp",
+      "/assets/screenshots/treasure-run-8.webp"
     ],
     "video": "",
     "gameUrl": "/games/treasure-run/",
@@ -382,9 +384,9 @@
     ],
     "cover": "/assets/covers/bytedance.webp",
     "screenshots": [
-      "/assets/covers/bytedance-1.webp",
-      "/assets/covers/bytedance-2.webp",
-      "/assets/covers/bytedance-3.webp"
+      "/assets/screenshots/bytedance-1.webp",
+      "/assets/screenshots/bytedance-2.webp",
+      "/assets/screenshots/bytedance-3.webp"
     ],
     "video": "",
     "gameUrl": "/games/bytedance/",
@@ -421,9 +423,9 @@
     ],
     "cover": "/assets/covers/fuel-the-limit.webp",
     "screenshots": [
-      "/assets/covers/fuel-the-limit-1.webp",
-      "/assets/covers/fuel-the-limit-2.webp",
-      "/assets/covers/fuel-the-limit-3.webp"
+      "/assets/screenshots/fuel-the-limit-1.webp",
+      "/assets/screenshots/fuel-the-limit-2.webp",
+      "/assets/screenshots/fuel-the-limit-3.webp"
     ],
     "video": "",
     "gameUrl": "/games/fuel-the-limit/",
@@ -460,11 +462,11 @@
     ],
     "cover": "/assets/covers/the-great-lift-escape.webp",
     "screenshots": [
-      "/assets/covers/the-great-lift-escape-1.webp",
-      "/assets/covers/the-great-lift-escape-2.webp",
-      "/assets/covers/the-great-lift-escape-3.webp",
-      "/assets/covers/the-great-lift-escape-4.webp",
-      "/assets/covers/the-great-lift-escape-5.webp"
+      "/assets/screenshots/the-great-lift-escape-1.webp",
+      "/assets/screenshots/the-great-lift-escape-2.webp",
+      "/assets/screenshots/the-great-lift-escape-3.webp",
+      "/assets/screenshots/the-great-lift-escape-4.webp",
+      "/assets/screenshots/the-great-lift-escape-5.webp"
     ],
     "video": "",
     "gameUrl": "/games/the-great-lift-escape/",
@@ -500,9 +502,9 @@
     ],
     "cover": "/assets/covers/memory-game.webp",
     "screenshots": [
-      "/assets/covers/memory-game-1.webp",
-      "/assets/covers/memory-game-2.webp",
-      "/assets/covers/memory-game-3.webp"
+      "/assets/screenshots/memory-game-1.webp",
+      "/assets/screenshots/memory-game-2.webp",
+      "/assets/screenshots/memory-game-3.webp"
     ],
     "video": "",
     "gameUrl": "/games/memory-game/",
@@ -538,13 +540,13 @@
     ],
     "cover": "/assets/covers/password-challenge.webp",
     "screenshots": [
-      "/assets/covers/password-challenge-1.webp",
-      "/assets/covers/password-challenge-2.webp",
-      "/assets/covers/password-challenge-3.webp",
-      "/assets/covers/password-challenge-4.webp",
-      "/assets/covers/password-challenge-5.webp",
-      "/assets/covers/password-challenge-6.webp",
-      "/assets/covers/password-challenge-7.webp"
+      "/assets/screenshots/password-challenge-1.webp",
+      "/assets/screenshots/password-challenge-2.webp",
+      "/assets/screenshots/password-challenge-3.webp",
+      "/assets/screenshots/password-challenge-4.webp",
+      "/assets/screenshots/password-challenge-5.webp",
+      "/assets/screenshots/password-challenge-6.webp",
+      "/assets/screenshots/password-challenge-7.webp"
     ],
     "video": "",
     "gameUrl": "/games/password-challenge/",
@@ -580,12 +582,12 @@
     ],
     "cover": "/assets/covers/somerset.webp",
     "screenshots": [
-      "/assets/covers/somerset-1.webp",
-      "/assets/covers/somerset-2.webp",
-      "/assets/covers/somerset-3.webp",
-      "/assets/covers/somerset-4.webp",
-      "/assets/covers/somerset-5.webp",
-      "/assets/covers/somerset-6.webp"
+      "/assets/screenshots/somerset-1.webp",
+      "/assets/screenshots/somerset-2.webp",
+      "/assets/screenshots/somerset-3.webp",
+      "/assets/screenshots/somerset-4.webp",
+      "/assets/screenshots/somerset-5.webp",
+      "/assets/screenshots/somerset-6.webp"
     ],
     "video": "",
     "gameUrl": "/games/somerset/",
@@ -621,13 +623,13 @@
     ],
     "cover": "/assets/covers/retro-reel.webp",
     "screenshots": [
-      "/assets/covers/retro-reel-1.webp",
-      "/assets/covers/retro-reel-2.webp",
-      "/assets/covers/retro-reel-3.webp",
-      "/assets/covers/retro-reel-4.webp",
-      "/assets/covers/retro-reel-5.webp",
-      "/assets/covers/retro-reel-6.webp",
-      "/assets/covers/retro-reel-7.webp"
+      "/assets/screenshots/retro-reel-1.webp",
+      "/assets/screenshots/retro-reel-2.webp",
+      "/assets/screenshots/retro-reel-3.webp",
+      "/assets/screenshots/retro-reel-4.webp",
+      "/assets/screenshots/retro-reel-5.webp",
+      "/assets/screenshots/retro-reel-6.webp",
+      "/assets/screenshots/retro-reel-7.webp"
     ],
     "video": "",
     "gameUrl": "/games/retro-reel/",
@@ -663,10 +665,10 @@
     ],
     "cover": "/assets/covers/kff-spin-wheel.webp",
     "screenshots": [
-      "/assets/covers/kff-spin-wheel-1.webp",
-      "/assets/covers/kff-spin-wheel-2.webp",
-      "/assets/covers/kff-spin-wheel-3.webp",
-      "/assets/covers/kff-spin-wheel-4.webp"
+      "/assets/screenshots/kff-spin-wheel-1.webp",
+      "/assets/screenshots/kff-spin-wheel-2.webp",
+      "/assets/screenshots/kff-spin-wheel-3.webp",
+      "/assets/screenshots/kff-spin-wheel-4.webp"
     ],
     "video": "",
     "gameUrl": "/games/kff-spin-wheel/",
@@ -702,11 +704,11 @@
     ],
     "cover": "/assets/covers/ready-set-pack.webp",
     "screenshots": [
-      "/assets/covers/ready-set-pack-1.webp",
-      "/assets/covers/ready-set-pack-2.webp",
-      "/assets/covers/ready-set-pack-3.webp",
-      "/assets/covers/ready-set-pack-4.webp",
-      "/assets/covers/ready-set-pack-5.webp"
+      "/assets/screenshots/ready-set-pack-1.webp",
+      "/assets/screenshots/ready-set-pack-2.webp",
+      "/assets/screenshots/ready-set-pack-3.webp",
+      "/assets/screenshots/ready-set-pack-4.webp",
+      "/assets/screenshots/ready-set-pack-5.webp"
     ],
     "video": "",
     "gameUrl": "/games/ready-set-pack/",
@@ -742,9 +744,9 @@
     ],
     "cover": "/assets/covers/gems-grabber.webp",
     "screenshots": [
-      "/assets/covers/gems-grabber-1.webp",
-      "/assets/covers/gems-grabber-2.webp",
-      "/assets/covers/gems-grabber-3.webp"
+      "/assets/screenshots/gems-grabber-1.webp",
+      "/assets/screenshots/gems-grabber-2.webp",
+      "/assets/screenshots/gems-grabber-3.webp"
     ],
     "video": "",
     "gameUrl": "/games/gems-grabber/",
@@ -780,11 +782,11 @@
     ],
     "cover": "/assets/covers/ai-defence-combo.webp",
     "screenshots": [
-      "/assets/covers/ai-defence-combo-1.webp",
-      "/assets/covers/ai-defence-combo-2.webp",
-      "/assets/covers/ai-defence-combo-3.webp",
-      "/assets/covers/ai-defence-combo-4.webp",
-      "/assets/covers/ai-defence-combo-5.webp"
+      "/assets/screenshots/ai-defence-combo-1.webp",
+      "/assets/screenshots/ai-defence-combo-2.webp",
+      "/assets/screenshots/ai-defence-combo-3.webp",
+      "/assets/screenshots/ai-defence-combo-4.webp",
+      "/assets/screenshots/ai-defence-combo-5.webp"
     ],
     "video": "",
     "gameUrl": "/games/ai-defence-combo/",
