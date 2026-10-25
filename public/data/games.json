@@ -118,6 +118,13 @@
     ],
     "video": "",
     "gameUrl": "/games/cisco-redeem/",
+    "embed": {
+      "provider": "itch.io",
+      "url": "https://itch.io/embed-upload/20017537?color=333333",
+      "width": 380,
+      "height": 640,
+      "orientation": "portrait"
+    },
     "developer": "Pawcademy",
     "developmentDate": "2026-10",
     "client": {
