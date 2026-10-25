@@ -21,6 +21,13 @@
     ],
     "video": "/assets/videos/spin-the-wheel-gameplay.mp4",
     "gameUrl": "/games/spin-the-wheel/",
+    "embed": {
+      "provider": "itch.io",
+      "url": "https://itch.io/embed-upload/19995585?color=333333",
+      "width": 640,
+      "height": 380,
+      "orientation": "landscape"
+    },
     "developer": "Pawcademy",
     "developmentDate": "2026-06",
     "client": {
