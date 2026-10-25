@@ -638,6 +638,19 @@
       min-height: 0;
     }
 
+    .game-embed-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 18px;
+      background: #f3edff;
+      color: #6841d9;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      border-bottom: 1px solid #e5dcff;
+    }
+
   </style>
 </head>
 
@@ -717,7 +730,15 @@
         "section",
         "game-embed-section " + orientation
       );
-    
+      
+      const label = createElement(
+        "div",
+        "game-embed-label",
+        "PLAYABLE GAME"
+      );
+      
+      section.append(label);
+      
       const iframe = document.createElement("iframe");
     
       iframe.className = "game-embed";
